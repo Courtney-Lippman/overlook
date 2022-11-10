@@ -9,10 +9,7 @@ describe('allBookings', function() {
     let allBookings1;
     beforeEach(function() {
         allBookings1 = new AllBookings(allBookingsData);
-    })
-    it('should return true', function() {
-    expect(true).to.equal(true);
-  });
+    });
 
     it('should be a function', function() {
         expect(AllBookings).to.be.a('function');
@@ -89,7 +86,7 @@ describe('allBookings', function() {
     });
 
     it('should create list of all availible rooms for a selected date', function(){
-        const allRooms1 = new AllRooms(allRoomsData)
+        const allRooms1 = new AllRooms(allRoomsData);
         const todayDate = allBookings1.getTodayDate();
         allBookings1.sortBookings(todayDate);
         expect(allBookings1.sortAllAvailibleRooms(20221206, allRooms1.allRooms)).to.deep.equal([
@@ -126,18 +123,39 @@ describe('allBookings', function() {
               costPerNight: 429.44
             }
           ]);
+          expect(allBookings1.sortAllAvailibleRooms(20231214, allRooms1.allRooms)).to.deep.equal([
+            {
+              number: 2,
+              roomType: 'suite',
+              bidet: false,
+              bedSize: 'full',
+              numBeds: 2,
+              costPerNight: 477.38
+            },
+            {
+              number: 3,
+              roomType: 'single room',
+              bidet: false,
+              bedSize: 'king',
+              numBeds: 1,
+              costPerNight: 491.14
+            },
+            {
+              number: 4,
+              roomType: 'single room',
+              bidet: false,
+              bedSize: 'queen',
+              numBeds: 1,
+              costPerNight: 429.44
+            },
+            {
+              number: 5,
+              roomType: 'single room',
+              bidet: true,
+              bedSize: 'queen',
+              numBeds: 2,
+              costPerNight: 340.17
+            }
+          ]);
     });
-
-
-
-
-    it.skip('', function(){})
-    it.skip('', function(){})
-    it.skip('', function(){})
-    it.skip('', function(){})
-    it.skip('', function(){})
-    it.skip('', function(){})
-
-
-
 });
