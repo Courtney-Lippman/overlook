@@ -19,4 +19,6 @@ const customerData = [
         id: 5,
         name: "Rhiannon Little"
         }
-]
+];
+
+export default customerData;

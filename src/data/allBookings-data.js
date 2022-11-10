@@ -48,3 +48,5 @@ const allBookingsData = [
         roomNumber: 5
         }
 ];
+
+export default allBookingsData;

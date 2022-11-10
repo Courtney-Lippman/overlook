@@ -1,4 +1,4 @@
-class allRooms {
+class AllRooms {
     constructor(allRoomsData) {
         this.allRooms = allRoomsData;
     };
@@ -7,3 +7,5 @@ class allRooms {
        return this.allRooms.find(room => room.number === selectedRoomId);
     };
 };
+
+export default AllRooms;
