@@ -19,16 +19,6 @@ class AllBookings {
             } else {
                 this.allUpcomingBookings.push(booking);
             }
-            // let bookingDate = booking.date.split('/') // gives us [ '2021', '01', '24' ]
-            // if (bookingDate[0] < date[0]) {
-            //     this.allPastBookings.push(bookingDate)
-            // } else if (bookingDate[0] === date[0] && bookingDate[1] < date[1]) {
-            //     this.allPastBookings.push(bookingDate)
-            // } else if (bookingDate[0] === date[0] && bookingDate[1] === date[1] && bookingDate[2] < date[2]) {
-            //     this.allPastBookings.push(bookingDate)
-            // } else {
-            //     this.allUpcomingBookings.push(bookingDate)
-            // }
           });
     };
 
@@ -43,8 +33,6 @@ class AllBookings {
                     condition = false;
                 } else {
                     condition = true;
-                    // console.log('room.number',room.number)
-                    // console.log('takenBooking.roomNumber',takenBooking.roomNumber)
                 }
             });
             return condition
@@ -52,6 +40,5 @@ class AllBookings {
          return allAvailibleRooms
     };
 };
-
 
 export default AllBookings;
