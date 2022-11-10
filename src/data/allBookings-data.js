@@ -44,7 +44,7 @@ const allBookingsData = [
         {
         id: "5fwrgu4i7k55hl6tb",
         userID: 49,
-        date: "2022/02/06",
+        date: "2022/12/06",
         roomNumber: 5
         }
 ];
