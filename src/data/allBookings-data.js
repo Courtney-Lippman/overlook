@@ -1,7 +1,7 @@
 const allBookingsData = [
     {
         id: "5fwrgu4i7k55hl6sz",
-        userID: 9,
+        userID: 1,
         date: "2023/04/22",
         roomNumber: 1
         },
@@ -31,19 +31,19 @@ const allBookingsData = [
         },
         {
         id: "5fwrgu4i7k55hl6t9",
-        userID: 38,
+        userID: 3,
         date: "2023/12/14",
         roomNumber: 1
         },
         {
         id: "5fwrgu4i7k55hl6ta",
-        userID: 25,
+        userID: 2,
         date: "2022/01/11",
         roomNumber: 2
         },
         {
         id: "5fwrgu4i7k55hl6tb",
-        userID: 49,
+        userID: 2,
         date: "2022/12/06",
         roomNumber: 5
         }
