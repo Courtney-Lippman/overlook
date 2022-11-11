@@ -39,37 +39,36 @@ it('should be able to have a different password', function() {
     expect(login2.password).to.equal('hello');
 });
 
-it('should create a login status of "accepted" based on valid passed in password and username', function() {
-    login1.createLoginStatus();
+    it('should create a login status of "accepted" based on valid passed in password and username', function() {
+        login1.createLoginStatus();
 
-    expect(login1.loginStatus).to.equal('accepted');
-});
+        expect(login1.loginStatus).to.equal('accepted');
+    });
 
-it('should create a login status of "Wrong password" based on nonvalid password and valid username', function() {
-    login2.createLoginStatus();
+    it('should create a login status of "Wrong password" based on nonvalid password and valid username', function() {
+        login2.createLoginStatus();
 
-    expect(login2.loginStatus).to.equal('Wrong password');
-});
+        expect(login2.loginStatus).to.equal('Wrong password');
+    });
 
-it('should create a login status of "username nonexistant" based on a nonvalid username', function() {
-    login3.createLoginStatus();
-    login4.createLoginStatus();
+    it('should create a login status of "username nonexistant" based on a nonvalid username', function() {
+        login3.createLoginStatus();
+        login4.createLoginStatus();
 
-    expect(login3.loginStatus).to.equal('username nonexistant');
-    expect(login4.loginStatus).to.equal('username nonexistant');
-});
+        expect(login3.loginStatus).to.equal('username nonexistant');
+        expect(login4.loginStatus).to.equal('username nonexistant');
+    });
 
-// it('should create a currentCustomer that is associated with valid user name and password', function() {
-//     login1.createLoginStatus();
-//     expect(login1.currentCustomer).to.equal({
-//             allBookings: "",
-//             id: 1,
-//             customerName: "Leatha Ullrich",
-//             pastBookings: [],
-//             selectedDate: 0,
-//             totalAmountSpent: 0,
-//             upcomingBookings: []
-//          }); // ****** WIll NEED TO UPDATE THE ABOVE ANSWER WHEN CUSTOMER CLASS IS FINISHED! *******
-// });
+    it('should have a customer property set to correlated customer object when valid password and username are entered', function() {
+        login1.createLoginStatus()
 
+        expect(login1.currentCustomer).to.deep.equal({
+            id: 1,
+            customerName: 'Leatha Ullrich',
+            upcomingBookings: [],
+            pastBookings: [],
+            allBookings: '',
+            totalAmountSpent: ''
+        });
+    });
 });
