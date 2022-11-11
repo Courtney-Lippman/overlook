@@ -7,10 +7,7 @@ describe('allRooms', function() {
   let allRooms1;
   beforeEach(function() {
       allRooms1 = new AllRooms(allRoomsData);
-  })
-  it('should return true', function() {
-  expect(true).to.equal(true);
-});
+  });
 
   it('should be a function', function() {
       expect(AllRooms).to.be.a('function');
