@@ -4,11 +4,147 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <title>Overlook</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo">
+  <main class="dash-main dash-main-js">
+    <nav class="nav-dash nav-dash-js">
+      <section class="logo logo-js">
+        <h1 class="overlook-txt">Overlook</h1>
+        <h2 class="apiary-txt">Apiary Hotel</h2>
+      </section>
+      <section class="welcome-txt">
+        <h1 class="welcome-txt">Welcome!</h1>
+      </section>
+    </nav>
+    <section class="dash-area dash-area-js">
+      <section class="select-date-section select-date-section-js">
+        <label for="date-selector">Select A Date For Your Next Stay!</label>
+        <input type="date" id="date-selector" name="date-selector" value="2017-06-01">
+         <!-- will set min to todays date in js -->
+        <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
+      </section>
+      <section class="totalSpent-wrapper">
+        <h1>Total Spent On Bookings</h1>
+        <h2>$300.26</h2>
+        <!-- aboves innerHTML will need to be dynamically changed -->
+      </section>
+      <section class="upcoming upcoming-js">
+        <h1 class="upcoming-stays">Upcoming Stays</h1>
+        <section class="thumbnails-of-upcoming-area">
+        </section>
+      </section>
+      <section class="past past-js">
+        <h1 class="past-stays">Past Stays</h1>
+        <section class="thumbnails-of-past-area">
+        </section>
+      </section>
+    </section>
+  </main>
+  <main class="availible-main availible-main-js">
+    <nav class="nav-avail nav-avail-js">
+      <section class="logo logo-js">
+        <h1 class="overlook-txt">Overlook</h1>
+        <h2 class="apiary-txt">Apiary Hotel</h2>
+      </section>
+      <section class="avail-nav-txt-section">
+        <h1 class="avail-nav-txt">Availible Rooms!</h1>
+      </section>
+      <section class="go-to-dash-button-section">
+        <button class="go-to-dash-button">Go Back To DashBoard!</button>
+      </section>
+    </nav>
+    <section class="avail-room-disp-filter">
+    <section class="avail-room-full-displays">
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Bedsize: Queen</li>
+          <li class="room-numbeds">Number of Beds 2</li>
+          <li class="room-costpernight"> Cost per Night: $477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Queen</li>
+          <li class="room-numbeds">2</li>
+          <li class="room-costpernight">$477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Bedsize: Queen</li>
+          <li class="room-numbeds">2</li>
+          <li class="room-costpernight">$477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Bedsize: Queen</li>
+          <li class="room-numbeds">2</li>
+          <li class="room-costpernight">$477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Bedsize: Queen</li>
+          <li class="room-numbeds">2</li>
+          <li class="room-costpernight">$477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="room-num">Room: 12</li>
+          <li class="room-type">Room Type: Residential Suite</li>
+          <li class="room-bidet">Bidet: Yes</li>
+          <li class="room-bedsize">Bedsize: Queen</li>
+          <li class="room-numbeds">2</li>
+          <li class="room-costpernight">$477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+    </section>
+    <div class="filter-wrapper">
+      <label for="type-select">Filter By Room Type:</label>
+      <select name="room-type" id="type-select">
+      <option value="">--Please choose an option--</option>
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="hamster">Hamster</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="goldfish">Goldfish</option>
+      <!-- above options will need to be added dynamically -->
+      </select>
+    </div>
+    </section>
+  </main>
   
+
+
+
+
+
+
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 
