@@ -26,6 +26,10 @@ function createLogin(username, password) {
     login = new Login(username, password)
     login.createLoginStatus(listOfCustomers)
     currentCustomer = login.currentCustomer;
+    console.log('allRooms', allRooms)
+    console.log('allBookings',allBookings)
+    console.log('currentCustomer',currentCustomer)
+    console.log('login', login)
 }
 
 
@@ -44,7 +48,6 @@ function createDataSets(allDataList) {
     listOfCustomers = allDataList[0];
     allRooms = new AllRooms(allDataList[1]);
     allBookings = new AllBookings(allDataList[2]);
-    
 }
 
 
