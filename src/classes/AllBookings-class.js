@@ -5,7 +5,7 @@ class AllBookings {
         this.allPastBookings = [];
         this.allUpcomingBookings = [];
     };
-
+    
     getTodayDate() {
         let currentDate = new Date().toJSON().slice(0, 10)
         return parseInt(currentDate.replaceAll('-', '')) // gives us 20221110 in num form
@@ -23,9 +23,7 @@ class AllBookings {
     };
 
     sortAllAvailibleRooms(selectedDate, allRoomsList) {
-            //selected date will need to be in the following form num 20221201 see sortBookings
-            //this function needs both getTodayDate() and sortBookings(date) (date is the result of getTodayDate())
-        const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate) //gives array of all rooms already taken for that date
+        const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate)
         const allAvailibleRooms = allRoomsList.filter(room => {
                 let condition;
             alreadyReservedForDateBookings.forEach(takenBooking => {
