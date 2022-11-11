@@ -14,6 +14,7 @@ class Login {
        if(existingCustomer && this.password === 'overlook2021') {
         this.currentCustomer = new Customer(existingCustomer);
         this.loginStatus = 'accepted';
+        console.log(this.currentCustomer)
        } else if (existingCustomer && this.password !== 'overlook2021') {
         this.loginStatus = 'Wrong password';
        } else if (existingCustomer === undefined) {
