@@ -19,7 +19,7 @@ describe('login', function() {
       expect(Login).to.be.a('function');
 });
 
-  it('should instantiate login username',function(){
+  it('should instantiate login',function(){
   expect(login1).to.be.an.instanceOf(Login);
 });
 
