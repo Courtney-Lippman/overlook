@@ -7,6 +7,8 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* ~~~~~~Dashboard Page~~~~~~ */
+
 .dash-main {
 display: flex;
 flex-direction: column;
@@ -86,10 +88,6 @@ height: 13vh;
 
 }
 
-.upcoming-past-wrapper {
-  display: flex;
-}
-
 .totalSpent-wrapper {
   border: solid;
   border-radius: 7px;
@@ -112,18 +110,131 @@ height: 13vh;
 }
 
 .bookings-section {
-border: solid;
-border-radius: 7px;
-display: flex
+  border: solid;
+  border-radius: 7px;
+  display: flex;
+  width: 70vw;
+  overflow: hidden;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .bookings-txt {
-
+  font-size: 2.5vh;
+  text-decoration: underline;
 }
 
 .thumbnails-of-bookings {
 display: flex;
 }
+
+
+/* ~~~~~~Availible Rooms Page~~~~~~ */
+
+.availible-main {
+display: flex;
+flex-direction: column;
+}
+
+.nav-avail {
+  border: solid;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+}
+
+.avail-nav-txt-wrapper {
+  width: 50vw;
+  border: solid;
+  border-radius: 10px;
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avail-nav-txt {
+font-size: 6vh;
+}
+
+.go-to-dash-button-wrapper {
+border: solid;
+border-radius: 9px;
+height: 10vh;
+}
+
+.go-to-dash-button {
+  margin: 3vh;
+  font-size: 4vh;
+  border-radius: 3px;
+}
+
+.avail-room-disp-filter {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-wrapper {
+
+}
+
+.type-select-label {
+font-size: 2vh;
+}
+
+.filter-select {
+font-size: 2vh;
+}
+
+option {
+
+}
+
+.filter-button{
+  font-size: 2vh;
+  border-radius: 3px;
+}
+
+.avail-room-full-displays {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.single-avail-room {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-avail-room-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5vh;
+}
+
+.details {
+
+}
+
+.book-room-button {
+  font-size: 2vh;
+  border-radius: 3px;
+}
+
+/*~~~~~~Misc~~~~~~ */
 
 .hide {
   display: none;
