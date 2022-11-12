@@ -114,7 +114,6 @@ height: 13vh;
   border-radius: 7px;
   display: flex;
   width: 70vw;
-  overflow: hidden;
   margin-top: 100px;
   flex-direction: column;
   align-items: center;
@@ -127,7 +126,10 @@ height: 13vh;
 }
 
 .thumbnails-of-bookings {
-display: flex;
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
