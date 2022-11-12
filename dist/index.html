@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
   <title>Overlook</title>
 </head>
 <body>
@@ -13,32 +16,34 @@
         <h1 class="overlook-txt">Overlook</h1>
         <h2 class="apiary-txt">Apiary Hotel</h2>
       </section>
-      <section class="welcome-txt">
+      <section class="welcome-txt-section">
         <h1 class="welcome-txt">Welcome!</h1>
       </section>
     </nav>
     <section class="dash-area dash-area-js">
       <section class="select-date-section select-date-section-js">
-        <label for="date-selector">Select A Date For Your Next Stay!</label>
+        <label class="date-selector-label" for="date-selector">Select A Date For Your Next Stay!</label>
         <input type="date" id="date-selector" name="date-selector" value="2017-06-01">
          <!-- will set min to todays date in js -->
         <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
       </section>
       <section class="totalSpent-wrapper">
-        <h1>Total Spent On Bookings</h1>
-        <h2>$300.26</h2>
+        <h1 class="total-spent-header">Total Spent On Bookings</h1>
+        <h2 class="total-spent-txt">$300.26</h2>
         <!-- aboves innerHTML will need to be dynamically changed -->
       </section>
-      <section class="upcoming upcoming-js">
-        <h1 class="upcoming-stays">Upcoming Stays</h1>
-        <section class="thumbnails-of-upcoming-area">
+      <div class="upcoming-past-wrapper">
+      <section class="bookings-section upcoming-section-js">
+        <h1 class="bookings-txt">Upcoming Stays</h1>
+        <section class="thumbnails-of-bookings thumbnails-of-upcoming-section-js">
         </section>
       </section>
-      <section class="past past-js">
-        <h1 class="past-stays">Past Stays</h1>
-        <section class="thumbnails-of-past-area">
+      <section class="bookings-section past-section-js">
+        <h1 class="bookings-txt">Past Stays</h1>
+        <section class="thumbnails-of-bookings thumbnails-of-past-section-js">
         </section>
       </section>
+    </div>
     </section>
   </main>
   <main class="availible-main availible-main-js hide">
