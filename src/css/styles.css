@@ -1,3 +1,131 @@
+/*
+#fccd47 - gold
+#091E2A - dark dark blue
+*/
+
 body {
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  font-family: 'Noto Sans', sans-serif;
 }
+
+.dash-main {
+display: flex;
+flex-direction: column;
+}
+
+.nav-dash {
+  border: solid;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+}
+
+.logo {
+display: flex;
+flex-direction: column;
+align-items: center;
+border: solid;
+border-radius: 10px;
+padding-left: 2vw;
+padding-right: 2vw;
+height: 13vh;
+}
+
+.overlook-txt {
+  font-size: 3vh;
+  margin-bottom: 1px;
+}
+
+.apiary-txt {
+  font-size: 2vh;
+  margin-top: 1px;
+}
+
+.welcome-txt-section {
+  width: 50vw;
+  border: solid;
+  border-radius: 10px;
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-txt {
+  font-size: 6vh;
+}
+
+.dash-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-date-section {
+  border: solid;
+  border-radius: 7px;
+  display: flex;
+  margin-top: 40px;
+  width: 70vw;
+  height: 8vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.date-selector-label {
+
+}
+
+#date-selector {
+
+}
+
+.search-avail-button {
+
+}
+
+.upcoming-past-wrapper {
+  display: flex;
+}
+
+.totalSpent-wrapper {
+  border: solid;
+  border-radius: 7px;
+  margin-top: 40px;
+  display: flex;
+  width: 26vw;
+  height: 17vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.total-spent-header {
+  font-size: 3vh;
+  margin-bottom: 1px;
+}
+
+.total-spent-txt {
+  font-size: 3vh;
+  margin-top: 11px;
+}
+
+.bookings-section {
+border: solid;
+border-radius: 7px;
+display: flex
+}
+
+.bookings-txt {
+
+}
+
+.thumbnails-of-bookings {
+display: flex;
+}
+
+.hide {
+  display: none;
+}
+
