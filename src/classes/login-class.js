@@ -1,4 +1,3 @@
-import customerData from "../data/customer-data";
 import Customer from "./customer-class";
 class Login {
     constructor(username, password) {
@@ -8,13 +7,12 @@ class Login {
         this.currentCustomer = {};
     };
 
-    createLoginStatus() {
+    createLoginStatus(customerList) {
        const userID = Number(this.username.replace('customer', ''));
-       const existingCustomer = customerData.find(customer => customer.id === userID);
+       const existingCustomer = customerList.find(customer => customer.id === userID);
        if(existingCustomer && this.password === 'overlook2021') {
         this.currentCustomer = new Customer(existingCustomer);
         this.loginStatus = 'accepted';
-        console.log(this.currentCustomer)
        } else if (existingCustomer && this.password !== 'overlook2021') {
         this.loginStatus = 'Wrong password';
        } else if (existingCustomer === undefined) {
