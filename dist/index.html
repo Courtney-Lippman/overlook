@@ -32,18 +32,18 @@
         <h2 class="total-spent-txt">$300.26</h2>
         <!-- aboves innerHTML will need to be dynamically changed -->
       </section>
-      <div class="upcoming-past-wrapper">
       <section class="bookings-section upcoming-section-js">
         <h1 class="bookings-txt">Upcoming Stays</h1>
         <section class="thumbnails-of-bookings thumbnails-of-upcoming-section-js">
+               <!-- where thumbnails of bookings will go dynamically - access innerHTML for this -->
         </section>
       </section>
       <section class="bookings-section past-section-js">
         <h1 class="bookings-txt">Past Stays</h1>
         <section class="thumbnails-of-bookings thumbnails-of-past-section-js">
+          <!-- where thumbnails of bookings will go dynamically - access innerHTML for this -->
         </section>
       </section>
-    </div>
     </section>
   </main>
   <main class="availible-main availible-main-js hide">
@@ -56,91 +56,136 @@
         <h1 class="avail-nav-txt">Availible Rooms!</h1>
       </div>
       <div class="go-to-dash-button-wrapper">
-        <button class="go-to-dash-button">Go Back To DashBoard!</button>
+        <button class="go-to-dash-button">Go Back To Dashboard!</button>
       </div>
     </nav>
     <section class="avail-room-disp-filter">
+      <form for="tag-select" class="filter-wrapper">
+        <label class="type-select-label" for="type-select">Filter By Room Type:</label>
+        <select class="filter-select" name="room-type" id="type-select">
+        <option value="">--Please choose an option--</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+        <!-- above options will need to be added dynamically -->
+        </select>
+        <button class="filter-button">Search</button>
+      </form>
     <section class="avail-room-full-displays">
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Bedsize: Queen</li>
-          <li class="room-numbeds">Number of Beds 2</li>
-          <li class="room-costpernight"> Cost per Night: $477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Queen</li>
-          <li class="room-numbeds">2</li>
-          <li class="room-costpernight">$477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Bedsize: Queen</li>
-          <li class="room-numbeds">2</li>
-          <li class="room-costpernight">$477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Bedsize: Queen</li>
-          <li class="room-numbeds">2</li>
-          <li class="room-costpernight">$477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Bedsize: Queen</li>
-          <li class="room-numbeds">2</li>
-          <li class="room-costpernight">$477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
-          <li class="room-num">Room: 12</li>
-          <li class="room-type">Room Type: Residential Suite</li>
-          <li class="room-bidet">Bidet: Yes</li>
-          <li class="room-bedsize">Bedsize: Queen</li>
-          <li class="room-numbeds">2</li>
-          <li class="room-costpernight">$477.38</li>
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
+        </ul>
+        <button class="book-room-button">Book</button>
+      </div>
+      <div class="single-avail-room single-avail-room-js">
+        <ul class="single-avail-room-list single-avail-room-list">
+          <li class="details room-num">Room: 12</li>
+          <li class="details room-type">Room Type: Residential Suite</li>
+          <li class="details room-bidet">Bidet: Yes</li>
+          <li class="details room-bedsize">Bedsize: Queen</li>
+          <li class="details room-numbeds">Number of Beds 2</li>
+          <li class="details room-costpernight"> Cost per Night: $477.38</li>
         </ul>
         <button class="book-room-button">Book</button>
       </div>
     </section>
-    <div class="filter-wrapper">
-      <label for="type-select">Filter By Room Type:</label>
-      <select name="room-type" id="type-select">
-      <option value="">--Please choose an option--</option>
-      <option value="dog">Dog</option>
-      <option value="cat">Cat</option>
-      <option value="hamster">Hamster</option>
-      <option value="parrot">Parrot</option>
-      <option value="spider">Spider</option>
-      <option value="goldfish">Goldfish</option>
-      <!-- above options will need to be added dynamically -->
-      </select>
-    </div>
     </section>
   </main>
   
