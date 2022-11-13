@@ -16,16 +16,21 @@ let allBookingsData;
 let allRooms;
 let allBookings;
 let currentCustomer;
+let todaysDate;
 let login;
 // DOM Query Selectors -------------------------------------------------------------
 //Dashboard Query Selectors --------------
+const DashboardPage = document.querySelector('.dash-main-js')
 const datePickerInput = document.querySelector('#date-selector');
+const datePickerAlertWrapper = document.querySelector('.date-select-alert-wrapper-js')
+const datePickerAvailAlertWrapper = document.querySelector('.date-select-avail-alert-wrapper-js')
 const findRoomButton = document.querySelector('.search-avail-button-js');
 const totalSpentTxt = document.querySelector('.total-spent-txt');
 const thumbnailsUpcomingSection = document.querySelector('.thumbnails-of-upcoming-section-js');
 const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-section-js');
 // Availible Rooms Query Selectors -------------
-
+const thumbnailsAvailSection = document.querySelector('.avail-room-full-displays-js');
+const availibleRoomsPage = document.querySelector('.availible-main-js')
 //Fetch/Promise Functions -------------------
 
 
@@ -77,7 +82,7 @@ function createInstances(allRoomsData, allBookingsData, customersData) {
     allBookings = new AllBookings(allBookingsData)
     randomIndex = createRandomIndex(customersData)
     currentCustomer = new Customer(customersData[randomIndex])
-    let todaysDate = allBookings.getTodayDate()
+    todaysDate = allBookings.getTodayDate()
     allBookings.sortBookings(todaysDate)
     currentCustomer.getBookings(allBookings.allBookings, 'all')
     currentCustomer.getBookings(allBookings.allPastBookings, 'past')
@@ -117,13 +122,54 @@ function displayStay(domVar, bookingList, stayType) {
 function displayAvailRooms(event) {
     //may be an issue that our promise is in the displayPage function above
 event.preventDefault()
-let userInput = datePickerInput.value;
+let userInput = parseInt(datePickerInput.value.replaceAll('-', ''))
 console.log('userInput', userInput)
-let availBookingsList
+console.log('todaysDate',todaysDate)
+if(userInput < todaysDate) {
+    datePickerAlertWrapper.classList.remove('hide')
+} else {
 // console.log('gothrough?', allBookings)
 // console.log('allRooms', allRooms.allRooms)
-availBookingsList = allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
-console.log('availBookingsList', availBookingsList)
+let availBookingsList = allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
+createAvailRoomThumbnailsDisplay(availBookingsList)
+DashboardPage.classList.add('hide')
+availibleRoomsPage.classList.remove('hide')
+// console.log('availBookingsList', availBookingsList)
 
 
+//Now we take the availBookingsList array and iterate through it creating new html listing for each using template in index.html
+//We also need to hide dash main and unhide avail main
 }
+datePickerInput.value="yyyy-MM-dd"; // this resets the datePicker once search is hit
+}
+
+function createAvailRoomThumbnailsDisplay(list) {
+    if(list.length > 0) {
+        let availRoomsSection = ""
+        list.forEach(availRoom => {
+            console.log('availRoom',availRoom)
+            let bidet;
+            if(availRoom.bidet) {
+                bidet = 'Yes'
+            } else if(!availRoom.bidet) {
+                bidet = 'No'
+            }
+            availRoomsSection += `
+                <div class="single-avail-room single-avail-room-js">
+                    <ul class="single-avail-room-list single-avail-room-list">
+                        <li class="details room-num">Room: ${availRoom.number}</li>
+                        <li class="details room-type">Room Type: ${availRoom.roomType}</li>
+                        <li class="details room-bidet">Bidet: ${bidet}</li>
+                        <li class="details room-bedsize">Bedsize: ${availRoom.bedSize}</li>
+                        <li class="details room-numbeds">Number of Beds: ${availRoom.numBeds}</li>
+                        <li class="details room-costpernight"> Cost per Night: $${availRoom.costPerNight}</li>
+                    </ul>
+                    <button class="book-room-button">Book</button>
+                </div>`
+        })
+        return thumbnailsAvailSection.innerHTML = availRoomsSection
+    } else {
+        datePickerAvailAlertWrapper.classList.remove('hide')
+    }
+}
+
