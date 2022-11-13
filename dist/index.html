@@ -22,11 +22,19 @@
     </nav>
     <section class="dash-area dash-area-js">
       <section class="select-date-section select-date-section-js">
-        <label class="date-selector-label" for="date-selector">Select A Date For Your Next Stay!</label>
-        <input type="date" id="date-selector" name="date-selector" value="2017-06-01">
-         <!-- will set min to todays date in js -->
-        <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
+        <form for="date-selector" class="date-selector-wrapper">
+          <label class="date-selector-label" for="date-selector">Select A Date For Your Next Stay!</label>
+          <input type="date" id="date-selector" name="date-selector" value="yyyy-MM-dd">
+          <!-- will set min to todays date in js -->
+          <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
+        </form>
+        <div class="date-select-alert-wrapper-js hide">
+          <p class="date-select-alert">Please try a date in the future!</p>
+        </div>
       </section>
+      <div class="date-select-avail-alert-wrapper date-select-avail-alert-wrapper-js hide">
+        <p class="date-select-alert">Our deepest apologies! There are no rooms available for the date that you selected. We encourage you to try a different date.</p>
+      </div>
       <section class="totalSpent-wrapper">
         <h1 class="total-spent-header">Total Spent On Bookings</h1>
         <h2 class="total-spent-txt">$300.26</h2>
@@ -60,7 +68,7 @@
       </div>
     </nav>
     <section class="avail-room-disp-filter">
-      <form for="tag-select" class="filter-wrapper">
+      <form for="type-select" class="filter-wrapper">
         <label class="type-select-label" for="type-select">Filter By Room Type:</label>
         <select class="filter-select" name="room-type" id="type-select">
         <option value="">--Please choose an option--</option>
@@ -74,7 +82,7 @@
         </select>
         <button class="filter-button">Search</button>
       </form>
-    <section class="avail-room-full-displays">
+    <section class="avail-room-full-displays avail-room-full-displays-js">
       <div class="single-avail-room single-avail-room-js">
         <ul class="single-avail-room-list single-avail-room-list">
           <li class="details room-num">Room: 12</li>
