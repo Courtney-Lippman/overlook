@@ -13,8 +13,7 @@ class AllRooms {
       return acc
      }, [])
      return [...new Set(allTypesList)]
-    }
-
+    };
 };
 
 export default AllRooms;
