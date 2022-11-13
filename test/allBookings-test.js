@@ -89,73 +89,71 @@ describe('allBookings', function() {
         const allRooms1 = new AllRooms(allRoomsData);
         const todayDate = allBookings1.getTodayDate();
         allBookings1.sortBookings(todayDate);
-        expect(allBookings1.sortAllAvailibleRooms(20221206, allRooms1.allRooms)).to.deep.equal([
-            {
-              number: 1,
-              roomType: 'residential suite',
-              bidet: true,
-              bedSize: 'queen',
-              numBeds: 1,
-              costPerNight: 358.4
-            },
-            {
-              number: 2,
-              roomType: 'suite',
-              bidet: false,
-              bedSize: 'full',
-              numBeds: 2,
-              costPerNight: 477.38
-            },
-            {
-              number: 3,
-              roomType: 'single room',
-              bidet: false,
-              bedSize: 'king',
-              numBeds: 1,
-              costPerNight: 491.14
-            },
-            {
-              number: 4,
-              roomType: 'single room',
-              bidet: false,
-              bedSize: 'queen',
-              numBeds: 1,
-              costPerNight: 429.44
-            }
-          ]);
-          expect(allBookings1.sortAllAvailibleRooms(20231214, allRooms1.allRooms)).to.deep.equal([
-            {
-              number: 2,
-              roomType: 'suite',
-              bidet: false,
-              bedSize: 'full',
-              numBeds: 2,
-              costPerNight: 477.38
-            },
-            {
-              number: 3,
-              roomType: 'single room',
-              bidet: false,
-              bedSize: 'king',
-              numBeds: 1,
-              costPerNight: 491.14
-            },
-            {
-              number: 4,
-              roomType: 'single room',
-              bidet: false,
-              bedSize: 'queen',
-              numBeds: 1,
-              costPerNight: 429.44
-            },
-            {
-              number: 5,
-              roomType: 'single room',
-              bidet: true,
-              bedSize: 'queen',
-              numBeds: 2,
-              costPerNight: 340.17
-            }
-          ]);
+      //   expect(allBookings1.sortAllAvailibleRooms('2022-12-06', allRooms1.allRooms)).to.deep.equal([{
+      //     number: 1,
+      //     roomType: 'residential suite',
+      //     bidet: true,
+      //     bedSize: 'queen',
+      //     numBeds: 1,
+      //     costPerNight: 358.4
+      //   },
+      //   {
+      //     number: 2,
+      //     roomType: 'suite',
+      //     bidet: false,
+      //     bedSize: 'full',
+      //     numBeds: 2,
+      //     costPerNight: 477.38
+      //   },
+      //   {
+      //     number: 3,
+      //     roomType: 'single room',
+      //     bidet: false,
+      //     bedSize: 'king',
+      //     numBeds: 1,
+      //     costPerNight: 491.14
+      //   },
+      //   {
+      //     number: 4,
+      //     roomType: 'single room',
+      //     bidet: false,
+      //     bedSize: 'queen',
+      //     numBeds: 1,
+      //     costPerNight: 429.44
+      //   }
+      // ]);
+          expect(allBookings1.sortAllAvailibleRooms('2023-12-14', allRooms1.allRooms)).to.deep.equal([{
+            number: 2,
+            roomType: 'suite',
+            bidet: false,
+            bedSize: 'full',
+            numBeds: 2,
+            costPerNight: 477.38
+          },
+          {
+            number: 3,
+            roomType: 'single room',
+            bidet: false,
+            bedSize: 'king',
+            numBeds: 1,
+            costPerNight: 491.14
+          },
+          {
+            number: 4,
+            roomType: 'single room',
+            bidet: false,
+            bedSize: 'queen',
+            numBeds: 1,
+            costPerNight: 429.44
+          },
+          {
+            number: 5,
+            roomType: 'single room',
+            bidet: true,
+            bedSize: 'queen',
+            numBeds: 2,
+            costPerNight: 340.17
+          }
+        ]);
     });
 });
