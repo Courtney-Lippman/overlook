@@ -32,6 +32,7 @@ const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-sectio
 // Event Listeners -----------------------------------------------------------
 //Dashboard Event Listeners  --------------
     window.addEventListener('load', pageLoad)
+    findRoomButton.addEventListener('click', displayAvailRooms)
 // datePickerInput.addEventListener('click', );
 // findRoomButton.addEventListener('click');
 // Functions -----------------------------------------------------------------
@@ -110,6 +111,19 @@ function displayStay(domVar, bookingList, stayType) {
     return domVar.innerHTML = staySection;
 }
 
+//Event Listener Functions (outside of load)
 
 
+function displayAvailRooms(event) {
+    //may be an issue that our promise is in the displayPage function above
+event.preventDefault()
+let userInput = datePickerInput.value;
+console.log('userInput', userInput)
+let availBookingsList
+// console.log('gothrough?', allBookings)
+// console.log('allRooms', allRooms.allRooms)
+availBookingsList = allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
+console.log('availBookingsList', availBookingsList)
 
+
+}
