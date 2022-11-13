@@ -31,6 +31,7 @@ const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-sectio
 // Availible Rooms Query Selectors -------------
 const thumbnailsAvailSection = document.querySelector('.avail-room-full-displays-js');
 const availibleRoomsPage = document.querySelector('.availible-main-js')
+const goBackButton = document.querySelector('.go-to-dash-button-js')
 //Fetch/Promise Functions -------------------
 
 
@@ -38,6 +39,7 @@ const availibleRoomsPage = document.querySelector('.availible-main-js')
 //Dashboard Event Listeners  --------------
     window.addEventListener('load', pageLoad)
     findRoomButton.addEventListener('click', displayAvailRooms)
+    goBackButton.addEventListener('click', backToDash)
 // datePickerInput.addEventListener('click', );
 // findRoomButton.addEventListener('click');
 // Functions -----------------------------------------------------------------
@@ -171,5 +173,13 @@ function createAvailRoomThumbnailsDisplay(list) {
     } else {
         datePickerAvailAlertWrapper.classList.remove('hide')
     }
+}
+
+function backToDash (event) {
+    event.preventDefault(event);
+    DashboardPage.classList.remove('hide')
+    availibleRoomsPage.classList.add('hide')
+    datePickerAlertWrapper.classList.add('hide')
+    datePickerAvailAlertWrapper.classList.add('hide')
 }
 
