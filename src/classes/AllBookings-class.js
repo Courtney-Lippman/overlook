@@ -4,6 +4,7 @@ class AllBookings {
         this.allBookings = allBookingsData;
         this.allPastBookings = [];
         this.allUpcomingBookings = [];
+        this.allAvailableRooms = [];
     };
     
     getTodayDate() {
@@ -26,11 +27,14 @@ class AllBookings {
         // console.log('Coming Through????', this.allUpcomingBookings)
         const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate)
         // console.log('alreadyReservedForDateBookings',alreadyReservedForDateBookings) // this is correct
-        const allAvailibleRooms = allRoomsList.filter(room => {
+        this.allAvailableRooms = allRoomsList.filter(room => {
             return !alreadyReservedForDateBookings.find(takenBooking =>  room.number === takenBooking.roomNumber)
         });
-         return allAvailibleRooms
     };
+
+    filterByType(selectedType) {
+        return this.allAvailableRooms.filter(room => room.roomType === selectedType);
+      }
 };
 
 export default AllBookings;
