@@ -22,8 +22,7 @@ class AllBookings {
           });
     };
 
-    sortAllAvailibleRooms(userInputDate, allRoomsList) {
-        const selectedDate = parseInt(userInputDate.replaceAll('-', ''))
+    sortAllAvailibleRooms(selectedDate, allRoomsList) {
         // console.log('Coming Through????', this.allUpcomingBookings)
         const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate)
         // console.log('alreadyReservedForDateBookings',alreadyReservedForDateBookings) // this is correct
