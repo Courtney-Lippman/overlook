@@ -72,20 +72,33 @@ height: 13vh;
   margin-top: 40px;
   width: 70vw;
   height: 8vh;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .date-selector-label {
-
+    font-size: 1.5vh;
 }
 
 #date-selector {
-
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .search-avail-button {
+  font-size: 1.5vh;
+}
 
+.date-select-alert-wrapper {
+
+}
+
+.date-select-avail-alert-wrapper {
+  font-size: 2vh;
+}
+
+.date-select-alert {
+  color: red;
 }
 
 .totalSpent-wrapper {
