@@ -22,18 +22,13 @@ class AllBookings {
           });
     };
 
-    sortAllAvailibleRooms(selectedDate, allRoomsList) {
+    sortAllAvailibleRooms(userInputDate, allRoomsList) {
+        const selectedDate = parseInt(userInputDate.replaceAll('-', ''))
+        // console.log('Coming Through????', this.allUpcomingBookings)
         const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate)
+        // console.log('alreadyReservedForDateBookings',alreadyReservedForDateBookings) // this is correct
         const allAvailibleRooms = allRoomsList.filter(room => {
-                let condition;
-            alreadyReservedForDateBookings.forEach(takenBooking => {
-                if(room.number === takenBooking.roomNumber) {
-                    condition = false;
-                } else {
-                    condition = true;
-                }
-            });
-            return condition
+            return !alreadyReservedForDateBookings.find(takenBooking =>  room.number === takenBooking.roomNumber)
         });
          return allAvailibleRooms
     };
