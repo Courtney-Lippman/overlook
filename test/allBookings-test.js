@@ -89,7 +89,8 @@ describe('allBookings', function() {
         const allRooms1 = new AllRooms(allRoomsData);
         const todayDate = allBookings1.getTodayDate();
         allBookings1.sortBookings(todayDate);
-        expect(allBookings1.sortAllAvailibleRooms(20221206, allRooms1.allRooms)).to.deep.equal([{
+        allBookings1.sortAllAvailibleRooms(20221206, allRooms1.allRooms)
+        expect(allBookings1.allAvailableRooms).to.deep.equal([{
           number: 1,
           roomType: 'residential suite',
           bidet: true,
@@ -122,7 +123,8 @@ describe('allBookings', function() {
           costPerNight: 429.44
         }
       ]);
-          expect(allBookings1.sortAllAvailibleRooms(20231214, allRooms1.allRooms)).to.deep.equal([{
+      allBookings1.sortAllAvailibleRooms(20231214, allRooms1.allRooms)
+          expect(allBookings1.allAvailableRooms).to.deep.equal([{
             number: 2,
             roomType: 'suite',
             bidet: false,

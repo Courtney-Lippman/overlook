@@ -28,10 +28,14 @@ const findRoomButton = document.querySelector('.search-avail-button-js');
 const totalSpentTxt = document.querySelector('.total-spent-txt');
 const thumbnailsUpcomingSection = document.querySelector('.thumbnails-of-upcoming-section-js');
 const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-section-js');
+
 // Availible Rooms Query Selectors -------------
 const thumbnailsAvailSection = document.querySelector('.avail-room-full-displays-js');
 const availibleRoomsPage = document.querySelector('.availible-main-js')
 const goBackButton = document.querySelector('.go-to-dash-button-js')
+const allRoomTypesFilterOptions = document.querySelector('.filter-select')
+const filterSearchButton = document.querySelector('.filter-button-js')
+
 //Fetch/Promise Functions -------------------
 
 
@@ -40,8 +44,10 @@ const goBackButton = document.querySelector('.go-to-dash-button-js')
     window.addEventListener('load', pageLoad)
     findRoomButton.addEventListener('click', displayAvailRooms)
     goBackButton.addEventListener('click', backToDash)
-// datePickerInput.addEventListener('click', );
-// findRoomButton.addEventListener('click');
+
+//Availible Rooms Page Event Listeners ------------
+filterSearchButton.addEventListener('click', displayRoomsOfSameType)
+
 // Functions -----------------------------------------------------------------
 
 // function createLogin(username, password) {
@@ -60,7 +66,7 @@ function pageLoad() {
     Promise.all([fetchData('customers'), fetchData('rooms'), fetchData('bookings')])
     .then((allDataList) => {
     
-        customersData = allDataList[0].customers;
+            customersData = allDataList[0].customers;
             allRoomsData = allDataList[1].rooms;
             allBookingsData = allDataList[2].bookings;
             console.log('customersData', customersData)
@@ -68,6 +74,7 @@ function pageLoad() {
             console.log('allBookingsData', allBookingsData)
             createInstances(allRoomsData, allBookingsData, customersData)
             displayTotal()
+            populateTypeFilter()
 
         
     })
@@ -118,32 +125,33 @@ function displayStay(domVar, bookingList, stayType) {
     return domVar.innerHTML = staySection;
 }
 
+function populateTypeFilter() {
+    const typesList = allRooms.createListOfRoomTypes();
+    typesList.forEach((type) => {
+      allRoomTypesFilterOptions.innerHTML += `
+      <option class="tag-options-text hover" value="${type}">${type}</option>
+    `;
+    });
+  }
+
 //Event Listener Functions (outside of load)
 
 
 function displayAvailRooms(event) {
     //may be an issue that our promise is in the displayPage function above
 event.preventDefault()
-let userInput = parseInt(datePickerInput.value.replaceAll('-', ''))
-console.log('userInput', userInput)
-console.log('todaysDate',todaysDate)
+let userInput = parseInt(datePickerInput.value.replaceAll('-', ''));
 if(userInput < todaysDate) {
     datePickerAlertWrapper.classList.remove('hide')
 } else {
-// console.log('gothrough?', allBookings)
-// console.log('allRooms', allRooms.allRooms)
-let availBookingsList = allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
-createAvailRoomThumbnailsDisplay(availBookingsList)
+ allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
+createAvailRoomThumbnailsDisplay(allBookings.allAvailableRooms)
 DashboardPage.classList.add('hide')
 availibleRoomsPage.classList.remove('hide')
-// console.log('availBookingsList', availBookingsList)
-
-
-//Now we take the availBookingsList array and iterate through it creating new html listing for each using template in index.html
-//We also need to hide dash main and unhide avail main
+console.log('availBookingsList111111', allBookings.allAvailableRooms)
 }
-datePickerInput.value="yyyy-MM-dd"; // this resets the datePicker once search is hit
-}
+datePickerInput.value="yyyy-MM-dd";
+};
 
 function createAvailRoomThumbnailsDisplay(list) {
     if(list.length > 0) {
@@ -158,8 +166,8 @@ function createAvailRoomThumbnailsDisplay(list) {
             }
             availRoomsSection += `
                 <div class="single-avail-room single-avail-room-js">
-                    <ul class="single-avail-room-list single-avail-room-list">
-                        <li class="details room-num">Room: ${availRoom.number}</li>
+                    <p class="single-avail-room-title">Room ${availRoom.number}</p>
+                    <ul class="single-avail-room-list">
                         <li class="details room-type">Room Type: ${availRoom.roomType}</li>
                         <li class="details room-bidet">Bidet: ${bidet}</li>
                         <li class="details room-bedsize">Bedsize: ${availRoom.bedSize}</li>
@@ -169,10 +177,23 @@ function createAvailRoomThumbnailsDisplay(list) {
                     <button class="book-room-button">Book</button>
                 </div>`
         })
+        thumbnailsAvailSection.classList.remove('hide')
         return thumbnailsAvailSection.innerHTML = availRoomsSection
     } else {
         datePickerAvailAlertWrapper.classList.remove('hide')
     }
+}
+
+function displayRoomsOfSameType(event) {
+        event.preventDefault()
+        let availRoomsFiltered;
+        availRoomsFiltered = allBookings.filterByType(allRoomTypesFilterOptions.value);
+        if(availRoomsFiltered.length > 0) {
+            createAvailRoomThumbnailsDisplay(availRoomsFiltered);
+        } else {
+            thumbnailsAvailSection.innerHTML = `<p class="no-avail-for-type-alert"> Our deepest apologies! There are currently no rooms availible for the room type you selected. Please select a different room type or select the go back to dashboard button and try a different date. We apologize for the inconvenience.</p>`
+        }
+      
 }
 
 function backToDash (event) {
@@ -182,4 +203,5 @@ function backToDash (event) {
     datePickerAlertWrapper.classList.add('hide')
     datePickerAvailAlertWrapper.classList.add('hide')
 }
+
 

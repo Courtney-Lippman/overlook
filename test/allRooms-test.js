@@ -40,4 +40,8 @@ describe('allRooms', function() {
         });
   });
 
+  it('should create a list of all roomTypes', function(){
+      expect(allRooms1.createListOfRoomTypes()).to.deep.equal([ "residential suite", "suite", "single room"]);
+  });
+
 });

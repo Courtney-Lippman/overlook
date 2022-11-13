@@ -1,10 +1,13 @@
 /*
-#fccd47 - gold
-#091E2A - dark dark blue
+#F4F4F4 - very, very, very light grey
+#D8D8D8 - light grey
+#FFD300 - yellow
+#404040 - very dark grey
 */
 
 body {
   font-family: 'Noto Sans', sans-serif;
+  background-color: #D8D8D8;
 }
 
 /* ~~~~~~Dashboard Page~~~~~~ */
@@ -15,8 +18,6 @@ flex-direction: column;
 }
 
 .nav-dash {
-  border: solid;
-  border-radius: 7px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,8 +28,9 @@ flex-direction: column;
 display: flex;
 flex-direction: column;
 align-items: center;
-border: solid;
+border: solid #FFD300;
 border-radius: 10px;
+background-color: #F4F4F4;
 padding-left: 2vw;
 padding-right: 2vw;
 height: 13vh;
@@ -37,17 +39,20 @@ height: 13vh;
 .overlook-txt {
   font-size: 3vh;
   margin-bottom: 1px;
+  color: #404040;
 }
 
 .apiary-txt {
   font-size: 2vh;
   margin-top: 1px;
+  color:  #404040;
 }
 
 .welcome-txt-section {
   width: 50vw;
-  border: solid;
+  border: solid #FFD300;
   border-radius: 10px;
+  background-color:#F4F4F4 ;
   height: 13vh;
   display: flex;
   flex-direction: column;
@@ -57,6 +62,7 @@ height: 13vh;
 
 .welcome-txt {
   font-size: 6vh;
+  color: #404040;
 }
 
 .dash-area {
@@ -66,18 +72,20 @@ height: 13vh;
 }
 
 .select-date-section {
-  border: solid;
+  border: solid #FFD300;
   border-radius: 7px;
+  background-color: #F4F4F4;
   display: flex;
   margin-top: 40px;
   width: 70vw;
   height: 8vh;
   justify-content: space-evenly;
   align-items: center;
+  color: #404040;
 }
 
 .date-selector-label {
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 #date-selector {
@@ -86,7 +94,10 @@ height: 13vh;
 }
 
 .search-avail-button {
-  font-size: 1.5vh;
+  font-size: 2vh;
+  border-color: #FFD300;
+  border-radius: 3PX;
+  background-color: #D8D8D8;
 }
 
 .date-select-alert-wrapper {
@@ -102,8 +113,9 @@ height: 13vh;
 }
 
 .totalSpent-wrapper {
-  border: solid;
+  border: solid #FFD300;;
   border-radius: 7px;
+  background-color:#F4F4F4;
   margin-top: 40px;
   display: flex;
   width: 26vw;
@@ -115,19 +127,23 @@ height: 13vh;
 .total-spent-header {
   font-size: 3vh;
   margin-bottom: 1px;
+  color:#404040;
 }
 
 .total-spent-txt {
   font-size: 3vh;
   margin-top: 11px;
+  color: #404040;;
 }
 
 .bookings-section {
-  border: solid;
+  border: solid #FFD300;
   border-radius: 7px;
+  background-color:#F4F4F4;
   display: flex;
   width: 70vw;
-  margin-top: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -136,6 +152,7 @@ height: 13vh;
 .bookings-txt {
   font-size: 2.5vh;
   text-decoration: underline;
+  color:#404040;
 }
 
 .thumbnails-of-bookings {
@@ -154,7 +171,6 @@ flex-direction: column;
 }
 
 .nav-avail {
-  border: solid;
   border-radius: 7px;
   display: flex;
   justify-content: space-around;
@@ -164,8 +180,9 @@ flex-direction: column;
 
 .avail-nav-txt-wrapper {
   width: 50vw;
-  border: solid;
+  border: solid #FFD300;
   border-radius: 10px;
+  background-color: #F4F4F4;
   height: 13vh;
   display: flex;
   flex-direction: column;
@@ -175,18 +192,18 @@ flex-direction: column;
 
 .avail-nav-txt {
 font-size: 6vh;
+color: #404040;
 }
 
 .go-to-dash-button-wrapper {
-border: solid;
-border-radius: 9px;
 height: 10vh;
 }
 
 .go-to-dash-button {
   margin: 3vh;
   font-size: 4vh;
-  border-radius: 3px;
+  border-radius: 7px;
+  border-color: #FFD300;
 }
 
 .avail-room-disp-filter {
@@ -217,8 +234,18 @@ option {
   border-radius: 3px;
 }
 
+.no-avail-for-type-alert {
+  font-size: 2vh;
+  color: red;
+  padding: 15px;
+}
+
 .avail-room-full-displays {
+  border: solid #FFD300;
+  border-radius: 7px;
+  background-color: #F4F4F4;
   margin-top: 60px;
+  margin-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -231,6 +258,10 @@ option {
   margin: 40px;
   align-items: center;
   justify-content: center;
+}
+
+.single-avail-room-title {
+  font-size: 1.75vh;
 }
 
 .single-avail-room-list {
