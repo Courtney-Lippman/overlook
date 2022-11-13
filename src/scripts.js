@@ -191,7 +191,7 @@ function displayRoomsOfSameType(event) {
         if(availRoomsFiltered.length > 0) {
             createAvailRoomThumbnailsDisplay(availRoomsFiltered);
         } else {
-            thumbnailsAvailSection.innerHTML = `<p class="no-avail-for-type-alert"> Our deepest apologies! There are currently no rooms availible for the room type you selected. Please select a different room type or select the go back to dashboard button and try a different date. We apologize for the inconvenience.</p>`
+            thumbnailsAvailSection.innerHTML = `<p class="no-avail-for-type-alert"> Our deepest apologies! There are currently no rooms available for the room type you selected. Please select a different room type or select the go back to dashboard button and try a different date. We apologize for the inconvenience.</p>`
         }
       
 }
