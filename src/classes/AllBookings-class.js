@@ -24,16 +24,18 @@ class AllBookings {
     };
 
     sortAllAvailibleRooms(selectedDate, allRoomsList) {
-        // console.log('Coming Through????', this.allUpcomingBookings)
-        const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate)
-        // console.log('alreadyReservedForDateBookings',alreadyReservedForDateBookings) // this is correct
+        const alreadyReservedForDateBookings = this.allUpcomingBookings.filter(booking => parseInt(booking.date.replaceAll('/', '')) === selectedDate);
         this.allAvailableRooms = allRoomsList.filter(room => {
             return !alreadyReservedForDateBookings.find(takenBooking =>  room.number === takenBooking.roomNumber)
         });
     };
 
     filterByType(selectedType) {
-        return this.allAvailableRooms.filter(room => room.roomType === selectedType);
+        if(selectedType === 'all-room-type') {
+            return this.allAvailableRooms
+        } else {
+            return this.allAvailableRooms.filter(room => room.roomType === selectedType);
+        }
       }
 };
 

@@ -232,6 +232,8 @@ option {
 .filter-button{
   font-size: 2vh;
   border-radius: 3px;
+  border-color: #FFD300;
+  background-color: #F4F4F4;
 }
 
 .no-avail-for-type-alert {
@@ -278,6 +280,8 @@ option {
 .book-room-button {
   font-size: 2vh;
   border-radius: 3px;
+  border-color:#FFD300;
+  background-color: #D8D8D8;
 }
 
 /*~~~~~~Misc~~~~~~ */

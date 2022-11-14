@@ -158,4 +158,46 @@ describe('allBookings', function() {
           }
         ]);
     });
+    it('should filter availible rooms by a selected type', function() {
+      const allRooms1 = new AllRooms(allRoomsData);
+      const todayDate = allBookings1.getTodayDate();
+      allBookings1.sortBookings(todayDate);
+      allBookings1.sortAllAvailibleRooms(20221206, allRooms1.allRooms)
+
+      expect(allBookings1.filterByType('all-room-type')).to.deep.equal([
+        {
+          number: 1,
+          roomType: 'residential suite',
+          bidet: true,
+          bedSize: 'queen',
+          numBeds: 1,
+          costPerNight: 358.4
+        },
+        {
+          number: 2,
+          roomType: 'suite',
+          bidet: false,
+          bedSize: 'full',
+          numBeds: 2,
+          costPerNight: 477.38
+        },
+        {
+          number: 3,
+          roomType: 'single room',
+          bidet: false,
+          bedSize: 'king',
+          numBeds: 1,
+          costPerNight: 491.14
+        },
+        {
+          number: 4,
+          roomType: 'single room',
+          bidet: false,
+          bedSize: 'queen',
+          numBeds: 1,
+          costPerNight: 429.44
+        }
+      ])
+
+    });
 });
