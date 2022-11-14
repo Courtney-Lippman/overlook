@@ -21,7 +21,7 @@ describe('login', function() {
 });
 
   it('should instantiate login',function(){
-  expect(login1).to.be.an.instanceOf(Login);
+    expect(login1).to.be.an.instanceOf(Login);
 });
 
 it('should accept an username', function() {
@@ -40,32 +40,32 @@ it('should be able to have a different password', function() {
     expect(login2.password).to.equal('hello');
 });
 
-    it('should create a login status of "accepted" based on valid passed in password and username', function() {
-        login1.createLoginStatus(customerData);
+it('should create a login status of "accepted" based on valid passed in password and username', function() {
+    login1.createLoginStatus(customerData);
 
-        expect(login1.loginStatus).to.equal('accepted');
+    expect(login1.loginStatus).to.equal('accepted');
+});
+
+it('should create a login status of "Not accepted" based on nonvalid password and/or nonvalid username', function() {
+    login2.createLoginStatus(customerData);
+    login3.createLoginStatus(customerData);
+    login4.createLoginStatus(customerData);
+
+    expect(login2.loginStatus).to.equal('not accepted');
+    expect(login3.loginStatus).to.equal('not accepted');
+    expect(login4.loginStatus).to.equal('not accepted');
+});
+
+it('should have a customer property set to correlated customer object when valid password and username are entered', function() {
+    login1.createLoginStatus(customerData)
+
+    expect(login1.currentCustomer).to.deep.equal({
+        id: 1,
+        customerName: 'Leatha Ullrich',
+        upcomingBookings: [],
+        pastBookings: [],
+        allBookings: '',
+        totalAmountSpent: ''
     });
-
-    it('should create a login status of "Not accepted" based on nonvalid password and/or nonvalid username', function() {
-        login2.createLoginStatus(customerData);
-        login3.createLoginStatus(customerData);
-        login4.createLoginStatus(customerData);
-
-        expect(login2.loginStatus).to.equal('not accepted');
-        expect(login3.loginStatus).to.equal('not accepted');
-        expect(login4.loginStatus).to.equal('not accepted');
-    });
-
-    it('should have a customer property set to correlated customer object when valid password and username are entered', function() {
-        login1.createLoginStatus(customerData)
-
-        expect(login1.currentCustomer).to.deep.equal({
-            id: 1,
-            customerName: 'Leatha Ullrich',
-            upcomingBookings: [],
-            pastBookings: [],
-            allBookings: '',
-            totalAmountSpent: ''
-        });
-    });
+});
 });
