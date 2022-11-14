@@ -10,19 +10,22 @@
   <title>Overlook</title>
 </head>
 <body>
-  <main class="login-main">
+  <main class="login-main login-main-js">
     <h1 class="login-title">Overlook Apiary Hotel</h1>
-    <section class="input-section">
+    <section class="input-section input-section-js">
       <div class="username-wrapper">
         <label for="username">Username:</label>
         <input class="input-field" type="text" id="username" name="username">
     </div>
     <div class="pasword-wrapper">
         <label for="pass">Password (8 characters minimum):</label>
-        <input class="input-field" type="password" id="pass" name="password"
+        <input class="input-field" type="password" id="password" name="password"
                minlength="8" required>
     </div>
-    <input type="submit" value="Sign in" class="sign-in-button">
+    <input type="submit" value="Sign in" class="sign-in-button sign-in-button-js">
+    </section>
+    <section class="input-section login-error-section-js hide">
+      <p class="login-error">Sorry, username/password is incorrect. Please Try again!</p>
     </section>
   </main>
   <main class="dash-main dash-main-js hide">
