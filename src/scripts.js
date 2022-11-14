@@ -79,9 +79,14 @@ function pageLoad() {
         
     })
     .catch(error => {
-        console.log('error',error);
+        displayGetError(error)
+        //this will eventually be in the login section
     })
     
+}
+
+function displayGetError(error) {
+    console.log(error) //this will display on the login page.
 }
 
 function createInstances(allRoomsData, allBookingsData, customersData) {
@@ -206,14 +211,17 @@ function requestBooking(event) {
 
     postData('bookings', customerRequest)
         .then(response => {
-            updateBookingsData(response)
+            displayPostSuccess()
+            setTimeout(updateBookingsData, 2000)
+         
         })
         .catch(error => {
-            console.log('Post Error',error)
+            displayPostError(error)
+            setTimeout(redisplayBookingsData, 3000)
         })
 }
 
-function updateBookingsData(response) {
+function updateBookingsData() {
     fetchData('bookings')
     .then(data => {
         allBookings = new AllBookings (data.bookings) ;
@@ -221,12 +229,24 @@ function updateBookingsData(response) {
         allBookings.sortAllAvailibleRooms(parseInt(selectedDate.replaceAll('-', '')), allRooms.allRooms)
         console.log('allBookings.allAvailableRooms', allBookings.allAvailableRooms)
         populateTypeFilter()
-        thumbnailsAvailSection.innerHTML = `<p class="booked-message">The Room Has Been Booked!</p>`
-        setTimeout(displayChangedBookingsData, 2000)
+        redisplayBookingsData()
       })
 }
 
-function displayChangedBookingsData() {
+function displayPostSuccess() {
+    thumbnailsAvailSection.innerHTML = `<p class="booked-message">The Room Has Been Booked!</p>`
+}
+
+function displayPostError(error) {
+    if(error.message[0] === '5') {
+        thumbnailsAvailSection.innerHTML = `<p class="booked-message">Whoops! Something is wrong with the server. Please try booking this room again later!</p>`
+    } else {
+        thumbnailsAvailSection.innerHTML = `<p class="booked-message">Server cannot process this request. Please try again later!</p>`
+    }
+
+}
+
+function redisplayBookingsData() {
     if(allBookings.allAvailableRooms.length > 0) {
         createAvailRoomThumbnailsDisplay(allBookings.allAvailableRooms)
         } else {
