@@ -10,7 +10,22 @@
   <title>Overlook</title>
 </head>
 <body>
-  <main class="dash-main dash-main-js">
+  <main class="login-main">
+    <h1 class="login-title">Overlook Apiary Hotel</h1>
+    <section class="input-section">
+      <div class="username-wrapper">
+        <label for="username">Username:</label>
+        <input class="input-field" type="text" id="username" name="username">
+    </div>
+    <div class="pasword-wrapper">
+        <label for="pass">Password (8 characters minimum):</label>
+        <input class="input-field" type="password" id="pass" name="password"
+               minlength="8" required>
+    </div>
+    <input type="submit" value="Sign in" class="sign-in-button">
+    </section>
+  </main>
+  <main class="dash-main dash-main-js hide">
     <nav class="nav-dash nav-dash-js">
       <section class="logo logo-js">
         <h1 class="overlook-txt">Overlook</h1>
