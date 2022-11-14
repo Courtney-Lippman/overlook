@@ -117,7 +117,7 @@ function displayTotal() {
 function displayStay(domVar, bookingList, stayType) {
     let staySection = "";
     bookingList.forEach(booking => {
-         staySection += `<div class="single-avail-room single--stay-js">
+         staySection += `<div class="single-avail-room single--stay-js" tabindex = "0">
         <ul class="single-avail-room-list single-${stayType}-stay-list-js">
           <li class="details booking-id">Booking ID: ${booking.id}</li>
           <li class="details booking-date">Booking Date: ${booking.date}</li>
