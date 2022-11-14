@@ -20,6 +20,13 @@ let todaysDate;
 let selectedDate;
 let login;
 // DOM Query Selectors -------------------------------------------------------------
+// Login Query Selectors -------------
+const loginMain = document.querySelector('.login-main-js')
+const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+const signInButton = document.querySelector('.sign-in-button-js')
+const loginSection = document.querySelector('.input-section-js')
+const loginErrorSection = document.querySelector('.login-error-section-js')
 //Dashboard Query Selectors --------------
 const DashboardPage = document.querySelector('.dash-main-js')
 const datePickerInput = document.querySelector('#date-selector');
@@ -42,8 +49,10 @@ const bookButton = document.querySelector('.book-room-button')
 
 
 // Event Listeners -----------------------------------------------------------
+// Login Event Listeners -------------
+window.addEventListener('load', pageLoad)
+signInButton.addEventListener('click', verifyCredentials)
 //Dashboard Event Listeners  --------------
-    window.addEventListener('load', pageLoad)
     findRoomButton.addEventListener('click', displayAvailRooms)
     goBackButton.addEventListener('click', backToDash)
 
@@ -68,46 +77,68 @@ thumbnailsAvailSection.addEventListener('click', requestBooking)
 function pageLoad() {
     Promise.all([fetchData('customers'), fetchData('rooms'), fetchData('bookings')])
     .then((allDataList) => {
-    
             customersData = allDataList[0].customers;
             allRoomsData = allDataList[1].rooms;
-            allBookingsData = allDataList[2].bookings;
-            createInstances(allRoomsData, allBookingsData, customersData)
-            displayTotal()
-            populateTypeFilter()
-
-        
+            allBookingsData = allDataList[2].bookings;   
     })
     .catch(error => {
         displayGetError(error)
-        //this will eventually be in the login section
-    })
-    
+    })   
 }
 
 function displayGetError(error) {
-    console.log(error) //this will display on the login page.
+    loginMain.innerHTML = `<h1 class="get-error-message">Whoops! Something went wrong. Please try again later! Error: ${error.message}.<h1>`;
 }
 
-function createInstances(allRoomsData, allBookingsData, customersData) {
-    let randomIndex;
+function createCustomerInfo() {
     allRooms = new AllRooms(allRoomsData)
     allBookings = new AllBookings(allBookingsData)
-    randomIndex = createRandomIndex(customersData)
-    currentCustomer = new Customer(customersData[randomIndex])
+    currentCustomer = login.currentCustomer
     todaysDate = allBookings.getTodayDate()
     allBookings.sortBookings(todaysDate)
     currentCustomer.getBookings(allBookings.allBookings, 'all')
     currentCustomer.getBookings(allBookings.allPastBookings, 'past')
     currentCustomer.getBookings(allBookings.allUpcomingBookings, 'future')
+    populateTypeFilter()
     displayTotal()
     displayStay(thumbnailsUpcomingSection, currentCustomer.upcomingBookings, 'upcoming')
     displayStay(thumbnailsPastSection, currentCustomer.pastBookings, 'past')
 }
 
-function createRandomIndex(allCustomers) {
-    return Math.floor(Math.random() * allCustomers.length);
-  }
+function verifyCredentials(event) {
+    event.preventDefault(event)
+    login = new Login(username.value, password.value)
+    login.createLoginStatus(customersData)
+    console.log('login.loginStatus',login.loginStatus)
+    if(login.loginStatus === 'accepted') {
+        displayDashBoard()
+        createCustomerInfo()
+    } else {
+        displayCredentialError()
+    }
+
+}
+
+function displayCredentialError() {
+    loginSection.classList.add('hide')
+    signInButton.classList.add('hide')
+    loginErrorSection.classList.remove('hide')
+    setTimeout(resetLogin, 2000)
+}
+
+function resetLogin() {
+    username.value = ''
+    password.value = ''
+    loginSection.classList.remove('hide')
+    signInButton.classList.remove('hide')
+    loginErrorSection.classList.add('hide')
+
+}
+
+function displayDashBoard() {
+    loginMain.classList.add('hide')
+    DashboardPage.classList.remove('hide')
+}
 
 function displayTotal() {
     currentCustomer.getTotalAmountSpent(allRooms)
