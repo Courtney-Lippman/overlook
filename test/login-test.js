@@ -1,5 +1,6 @@
 import chai from 'chai';
 import Login from '../src/classes/login-class';
+import customerData from '../src/data/customer-data';
 
 const expect = chai.expect;
 
@@ -40,27 +41,23 @@ it('should be able to have a different password', function() {
 });
 
     it('should create a login status of "accepted" based on valid passed in password and username', function() {
-        login1.createLoginStatus();
+        login1.createLoginStatus(customerData);
 
         expect(login1.loginStatus).to.equal('accepted');
     });
 
-    it('should create a login status of "Wrong password" based on nonvalid password and valid username', function() {
-        login2.createLoginStatus();
+    it('should create a login status of "Not accepted" based on nonvalid password and/or nonvalid username', function() {
+        login2.createLoginStatus(customerData);
+        login3.createLoginStatus(customerData);
+        login4.createLoginStatus(customerData);
 
-        expect(login2.loginStatus).to.equal('Wrong password');
-    });
-
-    it('should create a login status of "username nonexistant" based on a nonvalid username', function() {
-        login3.createLoginStatus();
-        login4.createLoginStatus();
-
-        expect(login3.loginStatus).to.equal('username nonexistant');
-        expect(login4.loginStatus).to.equal('username nonexistant');
+        expect(login2.loginStatus).to.equal('not accepted');
+        expect(login3.loginStatus).to.equal('not accepted');
+        expect(login4.loginStatus).to.equal('not accepted');
     });
 
     it('should have a customer property set to correlated customer object when valid password and username are entered', function() {
-        login1.createLoginStatus()
+        login1.createLoginStatus(customerData)
 
         expect(login1.currentCustomer).to.deep.equal({
             id: 1,
