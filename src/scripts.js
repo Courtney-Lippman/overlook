@@ -29,6 +29,7 @@ const loginSection = document.querySelector('.input-section-js')
 const loginErrorSection = document.querySelector('.login-error-section-js')
 //Dashboard Query Selectors --------------
 const DashboardPage = document.querySelector('.dash-main-js')
+const welcomeTxt = document.querySelector('.welcome-txt-js')
 const datePickerInput = document.querySelector('#date-selector');
 const datePickerAlertWrapper = document.querySelector('.date-select-alert-wrapper-js')
 const datePickerAvailAlertWrapper = document.querySelector('.date-select-avail-alert-wrapper-js')
@@ -90,29 +91,14 @@ function displayGetError(error) {
     loginMain.innerHTML = `<h1 class="get-error-message">Whoops! Something went wrong. Please try again later! Error: ${error.message}.<h1>`;
 }
 
-function createCustomerInfo() {
-    allRooms = new AllRooms(allRoomsData)
-    allBookings = new AllBookings(allBookingsData)
-    currentCustomer = login.currentCustomer
-    todaysDate = allBookings.getTodayDate()
-    allBookings.sortBookings(todaysDate)
-    currentCustomer.getBookings(allBookings.allBookings, 'all')
-    currentCustomer.getBookings(allBookings.allPastBookings, 'past')
-    currentCustomer.getBookings(allBookings.allUpcomingBookings, 'future')
-    populateTypeFilter()
-    displayTotal()
-    displayStay(thumbnailsUpcomingSection, currentCustomer.upcomingBookings, 'upcoming')
-    displayStay(thumbnailsPastSection, currentCustomer.pastBookings, 'past')
-}
-
 function verifyCredentials(event) {
     event.preventDefault(event)
     login = new Login(username.value, password.value)
     login.createLoginStatus(customersData)
     console.log('login.loginStatus',login.loginStatus)
     if(login.loginStatus === 'accepted') {
-        displayDashBoard()
         createCustomerInfo()
+        displayDashBoard()
     } else {
         displayCredentialError()
     }
@@ -138,6 +124,23 @@ function resetLogin() {
 function displayDashBoard() {
     loginMain.classList.add('hide')
     DashboardPage.classList.remove('hide')
+    console.log('currentCustomer',currentCustomer)
+    welcomeTxt.innerText = `Welcome ${currentCustomer.customerName}!`
+}
+
+function createCustomerInfo() {
+    allRooms = new AllRooms(allRoomsData)
+    allBookings = new AllBookings(allBookingsData)
+    currentCustomer = login.currentCustomer
+    todaysDate = allBookings.getTodayDate()
+    allBookings.sortBookings(todaysDate)
+    currentCustomer.getBookings(allBookings.allBookings, 'all')
+    currentCustomer.getBookings(allBookings.allPastBookings, 'past')
+    currentCustomer.getBookings(allBookings.allUpcomingBookings, 'future')
+    populateTypeFilter()
+    displayTotal()
+    displayStay(thumbnailsUpcomingSection, currentCustomer.upcomingBookings, 'upcoming')
+    displayStay(thumbnailsPastSection, currentCustomer.pastBookings, 'past')
 }
 
 function displayTotal() {
