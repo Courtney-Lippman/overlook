@@ -16,6 +16,11 @@ body {
   align-items: center;
 }
 
+.get-error-message {
+  color: red;
+  font-size: 6vh;
+}
+
 .login-title {
   font-size: 10vh;
 }
@@ -44,6 +49,10 @@ body {
 
 .sign-in-button {
   font-size: 4vh;
+}
+
+.login-error {
+  color: red;
 }
 
 .dash-main {
