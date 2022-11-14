@@ -13,6 +13,7 @@ class AllBookings {
     };
 
     sortBookings(date) {
+        console.log('this.allBookings', this.allBookings)
         this.allBookings.forEach(booking => {
             let bookingDate = parseInt(booking.date.replaceAll('/', '')) //give us 20230602 in num form
             if(bookingDate < date) {
@@ -33,7 +34,12 @@ class AllBookings {
     };
 
     filterByType(selectedType) {
-        return this.allAvailableRooms.filter(room => room.roomType === selectedType);
+        console.log('selectedType',selectedType)
+        if(selectedType === 'all-room-type') {
+            return this.allAvailableRooms
+        } else {
+            return this.allAvailableRooms.filter(room => room.roomType === selectedType);
+        }
       }
 };
 
