@@ -7,6 +7,7 @@ import { fetchData, postData } from './apiCalls';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
+import './images/flower.png';
 
 // Global Variables ----------------------------------------------------------
 let customersData;
@@ -21,7 +22,7 @@ let login;
 
 // DOM Query Selectors -------------------------------------------------------------
 // Login Query Selectors -------------
-const loginMain = document.querySelector('.login-main-js');
+const loginMain = document.querySelector('.login-container-js');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const signInButton = document.querySelector('.sign-in-button-js');
@@ -37,12 +38,17 @@ const findRoomButton = document.querySelector('.search-avail-button-js');
 const totalSpentTxt = document.querySelector('.total-spent-txt');
 const thumbnailsUpcomingSection = document.querySelector('.thumbnails-of-upcoming-section-js');
 const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-section-js');
+const attriButton = document.querySelector('.attri-button-js')
 // Availible Rooms Query Selectors -------------
 const thumbnailsAvailSection = document.querySelector('.avail-room-full-displays-js');
 const availibleRoomsPage = document.querySelector('.availible-main-js');
 const goBackButton = document.querySelector('.go-to-dash-button-js');
 const allRoomTypesFilterOptions = document.querySelector('.filter-select');
 const filterSearchButton = document.querySelector('.filter-button-js');
+
+//Attributions Page Query Selectors -----------
+const attributions = document.querySelector('.attributions-js')
+const attGoDashButton = document.querySelector('.go-to-dash-button-att-js')
 
 // Event Listeners -----------------------------------------------------------
 // Login Event Listeners -------------
@@ -51,9 +57,12 @@ signInButton.addEventListener('click', verifyCredentials);
 //Dashboard Event Listeners  --------------
 findRoomButton.addEventListener('click', displayAvailRooms);
 goBackButton.addEventListener('click', backToDash);
+attriButton.addEventListener('click', displayAtrri)
 //Availible Rooms Page Event Listeners ------------
 filterSearchButton.addEventListener('click', displayRoomsOfSameType);
 thumbnailsAvailSection.addEventListener('click', requestBooking);
+//Attributes Page Event Listeners ------------
+attGoDashButton.addEventListener('click', displayDashBoard)
 
 // Functions -----------------------------------------------------------------
 function pageLoad() {
@@ -103,6 +112,7 @@ function resetLogin() {
 function displayDashBoard() {
     loginMain.classList.add('hide');
     DashboardPage.classList.remove('hide');
+    attributions.classList.add('hide')
     welcomeTxt.innerText = `Welcome ${currentCustomer.customerName}!`;
 };
 
@@ -154,7 +164,8 @@ function displayAvailRooms(event) {
 event.preventDefault();
 selectedDate = datePickerInput.value;
 let userInput = parseInt(selectedDate.replaceAll('-', ''));
-if(userInput < todaysDate) {
+console.log('userInput',userInput)
+if(userInput < todaysDate || !userInput) {
     datePickerAlertWrapper.classList.remove('hide')
 } else {
  allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
@@ -183,7 +194,7 @@ function createAvailRoomThumbnailsDisplay(list) {
                         <li class="details room-numbeds">Number of Beds: ${availRoom.numBeds}</li>
                         <li class="details room-costpernight"> Cost per Night: $${availRoom.costPerNight}</li>
                     </ul>
-                    <button class="book-room-button" id ="${availRoom.number}">Book</button>
+                    <button class="book-room-button hover" id ="${availRoom.number}">Book</button>
                 </section>`;
         });
         DashboardPage.classList.add('hide');
@@ -266,4 +277,9 @@ function backToDash (event) {
     datePickerAvailAlertWrapper.classList.add('hide');
 };
 
-
+function displayAtrri() {
+    DashboardPage.classList.add('hide');
+    datePickerAlertWrapper.classList.add('hide');
+    datePickerAvailAlertWrapper.classList.add('hide');
+    attributions.classList.remove('hide')
+}
