@@ -5,12 +5,25 @@
 #404040 - very dark grey
 */
 
-body {
+
+html, body {
+  margin: none;
+  height: 100%;
   font-family: 'Noto Sans', sans-serif;
-  background-color: #D8D8D8;
+  background-color: #000000;
 }
 
 /* ~~~~~~Login Page~~~~~~ */
+.bg-container {
+  margin: none;
+  height: 100%;
+  background-color: black;
+  background-image: url(../images/login-photo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: 80%;
+}
 
 .login-main {
   display: flex;
@@ -25,36 +38,42 @@ body {
 
 .login-title {
   font-size: 10vh;
+  color: #FAD474;
 }
 
 .input-section {
-  border: solid #FFD300;
-  border-radius: 9px;
-  background-color: #F4F4F4;
-  color: #404040;
-  width: 50vw;
+  color: #FAD474;
+  width: 70vw;
   min-width: fit-content;
   height: 30vh;
   min-height: fit-content;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-evenly;
-  font-size: 2vh;
+  font-size: 4vh;
 }
 
 .input-field {
   font-size: 3vh;
   height: 4vh;
   width: 20vh;
+  margin-right: 2vw;
 }
 
 .sign-in-button {
-  font-size: 4vh;
+  font-size: 3vh;
+  border: solid #FAD474;
+  background-color: #000000;
+  padding: 2%;
+  border-radius: 20%;
+  color: #FAD474;
 }
 
 .login-error {
   color: red;
+  background-color: white;
+  font-size: 4vh;
 }
 
 /* ~~~~~~Dashboard Page~~~~~~ */
@@ -335,5 +354,9 @@ option {
 
 .hide {
   display: none;
+}
+
+.hover {
+  cursor: pointer;
 }
 

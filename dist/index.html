@@ -10,100 +10,95 @@
   <title>Overlook</title>
 </head>
 <body>
-  <main class="login-main login-main-js">
-    <h1 class="login-title">Overlook Apiary Hotel</h1>
-    <section class="input-section input-section-js">
-      <div class="username-wrapper">
-        <label for="username">Username:</label>
-        <input class="input-field" type="text" id="username" name="username">
-    </div>
-    <div class="pasword-wrapper">
-        <label for="pass">Password:</label>
-        <input class="input-field" type="password" id="password" name="password"
-               minlength="8" required>
-    </div>
-    <input type="submit" value="Sign in" class="sign-in-button sign-in-button-js">
-    </section>
-    <section class="input-section login-error-section-js hide">
-      <p class="login-error">Sorry, username/password is incorrect. Please Try again!</p>
-    </section>
-  </main>
-  <main class="dash-main dash-main-js hide">
-    <nav class="nav-dash nav-dash-js">
-      <section class="logo logo-js">
-        <h1 class="overlook-txt">Overlook</h1>
-        <h2 class="apiary-txt">Apiary Hotel</h2>
-      </section>
-      <section class="welcome-txt-section">
-        <h1 class="welcome-txt welcome-txt-js">Welcome!</h1>
-      </section>
-    </nav>
-    <section class="dash-area dash-area-js">
-      <section class="select-date-section select-date-section-js">
-        <form for="date-selector" class="date-selector-wrapper">
-          <label class="date-selector-label" for="date-selector">Select A Date For Your Next Stay!</label>
-          <input type="date" id="date-selector" name="date-selector" value="yyyy-MM-dd">
-          <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
-        </form>
-        <div class="date-select-alert-wrapper-js hide">
-          <p class="date-select-alert">Please try a date in the future!</p>
+  <div class="bg-container">
+    <main class="login-main login-main-js">
+      <h1 class="login-title">Overlook Apiary Hotel</h1>
+      <div class="all-user-input-wrapper">
+        <section class="input-section input-section-js">
+          <div class="username-wrapper">
+            <label for="username">Username:</label>
+            <input class="input-field" type="text" id="username" name="username">
         </div>
-      </section>
-      <div class="date-select-avail-alert-wrapper date-select-avail-alert-wrapper-js hide">
-        <p class="date-select-alert">Our deepest apologies! There are no rooms available for the date that you selected. We encourage you to try a different date.</p>
+        <div class="pasword-wrapper">
+            <label for="pass">Password:</label>
+            <input class="input-field" type="password" id="password" name="password"
+                  minlength="8" required>
+        </div>
+        <input type="submit" value="Sign in" class="sign-in-button hover sign-in-button-js">
+        </section>
       </div>
-      <section class="totalSpent-wrapper">
-        <h1 class="total-spent-header">Total Spent On Bookings</h1>
-        <h2 class="total-spent-txt">$300.26</h2>
+      <section class="input-section login-error-section-js hide">
+        <p class="login-error">Sorry, username/password is incorrect. Please Try again!</p>
       </section>
-      <section class="bookings-section upcoming-section-js">
-        <h1 class="bookings-txt">Upcoming Stays</h1>
-        <section class="thumbnails-of-bookings thumbnails-of-upcoming-section-js">
-               <!-- where thumbnails of bookings added dynamically here -->
+    </main>
+    <main class="dash-main dash-main-js hide">
+      <nav class="nav-dash nav-dash-js">
+        <section class="logo logo-js">
+          <h1 class="overlook-txt">Overlook</h1>
+          <h2 class="apiary-txt">Apiary Hotel</h2>
+        </section>
+        <section class="welcome-txt-section">
+          <h1 class="welcome-txt welcome-txt-js">Welcome!</h1>
+        </section>
+      </nav>
+      <section class="dash-area dash-area-js">
+        <section class="select-date-section select-date-section-js">
+          <form for="date-selector" class="date-selector-wrapper">
+            <label class="date-selector-label" for="date-selector">Select A Date For Your Next Stay!</label>
+            <input type="date" id="date-selector" name="date-selector" value="yyyy-MM-dd">
+            <button class="search-avail-button search-avail-button-js">Find The Perfect Room!</button>
+          </form>
+          <div class="date-select-alert-wrapper-js hide">
+            <p class="date-select-alert">Please try a date in the future!</p>
+          </div>
+        </section>
+        <div class="date-select-avail-alert-wrapper date-select-avail-alert-wrapper-js hide">
+          <p class="date-select-alert">Our deepest apologies! There are no rooms available for the date that you selected. We encourage you to try a different date.</p>
+        </div>
+        <section class="totalSpent-wrapper">
+          <h1 class="total-spent-header">Total Spent On Bookings</h1>
+          <h2 class="total-spent-txt">$300.26</h2>
+        </section>
+        <section class="bookings-section upcoming-section-js">
+          <h1 class="bookings-txt">Upcoming Stays</h1>
+          <section class="thumbnails-of-bookings thumbnails-of-upcoming-section-js">
+                <!-- where thumbnails of bookings added dynamically here -->
+          </section>
+        </section>
+        <section class="bookings-section past-section-js">
+          <h1 class="bookings-txt">Past Stays</h1>
+          <section class="thumbnails-of-bookings thumbnails-of-past-section-js">
+            <!-- where thumbnails of bookings added dynamically here-->
+          </section>
         </section>
       </section>
-      <section class="bookings-section past-section-js">
-        <h1 class="bookings-txt">Past Stays</h1>
-        <section class="thumbnails-of-bookings thumbnails-of-past-section-js">
-          <!-- where thumbnails of bookings added dynamically here-->
+    </main>
+    <main class="availible-main availible-main-js hide">
+      <nav class="nav-avail nav-avail-js">
+        <section class="logo logo-js">
+          <h1 class="overlook-txt">Overlook</h1>
+          <h2 class="apiary-txt">Apiary Hotel</h2>
         </section>
+        <div class="avail-nav-txt-wrapper">
+          <h1 class="avail-nav-txt">Available Rooms!</h1>
+        </div>
+        <div class="go-to-dash-button-wrapper">
+          <button class="go-to-dash-button go-to-dash-button-js">Go Back To Dashboard!</button>
+        </div>
+      </nav>
+      <section class="avail-room-disp-filter">
+        <form for="type-select" class="filter-wrapper">
+          <label class="type-select-label" for="type-select">Filter By Room Type:</label>
+          <select class="filter-select" name="room-type" id="type-select">
+          <!-- options added dynamically here -->
+          </select>
+          <button class="filter-button filter-button-js">Search</button>
+        </form>
+      <section class="avail-room-full-displays avail-room-full-displays-js">
       </section>
-    </section>
-  </main>
-  <main class="availible-main availible-main-js hide">
-    <nav class="nav-avail nav-avail-js">
-      <section class="logo logo-js">
-        <h1 class="overlook-txt">Overlook</h1>
-        <h2 class="apiary-txt">Apiary Hotel</h2>
       </section>
-      <div class="avail-nav-txt-wrapper">
-        <h1 class="avail-nav-txt">Available Rooms!</h1>
-      </div>
-      <div class="go-to-dash-button-wrapper">
-        <button class="go-to-dash-button go-to-dash-button-js">Go Back To Dashboard!</button>
-      </div>
-    </nav>
-    <section class="avail-room-disp-filter">
-      <form for="type-select" class="filter-wrapper">
-        <label class="type-select-label" for="type-select">Filter By Room Type:</label>
-        <select class="filter-select" name="room-type" id="type-select">
-        <!-- options added dynamically here -->
-        </select>
-        <button class="filter-button filter-button-js">Search</button>
-      </form>
-    <section class="avail-room-full-displays avail-room-full-displays-js">
-    </section>
-    </section>
-  </main>
-  
-
-
-
-
-
-
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
-  <script src="bundle.js"></script>
-
+    </main>
+    <script src="bundle.js"></script>
+  </div>
 </body>
 </html>
