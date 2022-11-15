@@ -7,7 +7,7 @@ import { fetchData, postData } from './apiCalls';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
-// import './images/login-photo.jpeg';
+import './images/flower.png';
 
 // Global Variables ----------------------------------------------------------
 let customersData;
@@ -185,7 +185,7 @@ function createAvailRoomThumbnailsDisplay(list) {
                         <li class="details room-numbeds">Number of Beds: ${availRoom.numBeds}</li>
                         <li class="details room-costpernight"> Cost per Night: $${availRoom.costPerNight}</li>
                     </ul>
-                    <button class="book-room-button" id ="${availRoom.number}">Book</button>
+                    <button class="book-room-button hover" id ="${availRoom.number}">Book</button>
                 </section>`;
         });
         DashboardPage.classList.add('hide');
