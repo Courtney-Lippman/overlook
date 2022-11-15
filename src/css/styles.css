@@ -9,7 +9,7 @@
 html, body {
   margin: none;
   height: 100%;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Alegreya', serif;
   background-color: #000000;
 }
 
@@ -45,11 +45,11 @@ html, body {
   color: #FAD474;
   width: 70vw;
   min-width: fit-content;
-  height: 30vh;
+  height: 10vh;
   min-height: fit-content;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-evenly;
   font-size: 4vh;
 }
@@ -59,14 +59,20 @@ html, body {
   height: 4vh;
   width: 20vh;
   margin-right: 2vw;
+  background-color: #000000;
+  color: #FAD474;
+  border: solid #FAD474;
 }
 
 .sign-in-button {
+  font-family: 'Alegreya', serif;
   font-size: 3vh;
   border: solid #FAD474;
   background-color: #000000;
-  padding: 2%;
-  border-radius: 20%;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10px;
   color: #FAD474;
 }
 
@@ -91,35 +97,29 @@ flex-direction: column;
 }
 
 .logo {
-display: flex;
-flex-direction: column;
-align-items: center;
-border: solid #FFD300;
-border-radius: 10px;
-background-color: #F4F4F4;
-padding-left: 2vw;
-padding-right: 2vw;
-height: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  height: 13vh;
+  color: #FAD474;
 }
 
 .overlook-txt {
   font-size: 3vh;
   margin-bottom: 1px;
-  color: #404040;
 }
 
 .apiary-txt {
   font-size: 2vh;
   margin-top: 1px;
-  color:  #404040;
 }
 
 .welcome-txt-section {
-  width: 50vw;
-  border: solid #FFD300;
-  border-radius: 10px;
-  background-color:#F4F4F4 ;
+  width: 57vw;
   height: 13vh;
+  margin-right: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,8 +127,8 @@ height: 13vh;
 }
 
 .welcome-txt {
-  font-size: 6vh;
-  color: #404040;
+  font-size: 4vh;
+  color: #FAD474;
 }
 
 .dash-area {
@@ -138,36 +138,28 @@ height: 13vh;
 }
 
 .select-date-section {
-  border: solid #FFD300;
-  border-radius: 7px;
-  background-color: #F4F4F4;
   display: flex;
   margin-top: 40px;
   width: 70vw;
   height: 8vh;
   justify-content: space-evenly;
   align-items: center;
-  color: #404040;
+  color: #FAD474;
 }
 
 .date-selector-label {
-    font-size: 2vh;
-}
-
-#date-selector {
-  margin-left: 20px;
-  margin-right: 20px;
+  font-size: 3vh;
+  color: #FAD474;
+  margin-right: 2vw;
 }
 
 .search-avail-button {
-  font-size: 2vh;
-  border-color: #FFD300;
-  border-radius: 3PX;
-  background-color: #D8D8D8;
-}
-
-.date-select-alert-wrapper {
-
+  font-family: 'Alegreya', serif;
+  font-size: 3vh;
+  border-radius: 3px;
+  border-color: #FAD474;
+  background-color: #000000;
+  color: #FAD474;
 }
 
 .date-select-avail-alert-wrapper {
@@ -176,12 +168,12 @@ height: 13vh;
 
 .date-select-alert {
   color: red;
+  background-color: white;
 }
 
 .totalSpent-wrapper {
-  border: solid #FFD300;;
-  border-radius: 7px;
-  background-color:#F4F4F4;
+  background-color:#000000;
+  color: #FAD474;
   margin-top: 40px;
   display: flex;
   width: 26vw;
@@ -193,19 +185,17 @@ height: 13vh;
 .total-spent-header {
   font-size: 3vh;
   margin-bottom: 1px;
-  color:#404040;
 }
 
 .total-spent-txt {
   font-size: 3vh;
   margin-top: 11px;
-  color: #404040;;
 }
 
 .bookings-section {
-  border: solid #FFD300;
+  border: solid;
   border-radius: 7px;
-  background-color:#F4F4F4;
+  background-color:#FAD474;
   display: flex;
   width: 70vw;
   margin-top: 30px;
@@ -213,19 +203,21 @@ height: 13vh;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  color: #000000;
 }
 
 .bookings-txt {
-  font-size: 2.5vh;
-  text-decoration: underline;
-  color:#404040;
+  font-size: 4vh;
+  color:black;
 }
 
 .thumbnails-of-bookings {
+  background-color: #FAD474;
   width: 70vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 3vh;
 }
 
 
@@ -246,9 +238,6 @@ flex-direction: column;
 
 .avail-nav-txt-wrapper {
   width: 50vw;
-  border: solid #FFD300;
-  border-radius: 10px;
-  background-color: #F4F4F4;
   height: 13vh;
   display: flex;
   flex-direction: column;
@@ -258,7 +247,7 @@ flex-direction: column;
 
 .avail-nav-txt {
 font-size: 6vh;
-color: #404040;
+color: #FAD474;
 }
 
 .go-to-dash-button-wrapper {
@@ -266,10 +255,13 @@ height: 10vh;
 }
 
 .go-to-dash-button {
+  font-family: 'Alegreya', serif;
   margin: 3vh;
-  font-size: 4vh;
+  font-size: 3vh;
   border-radius: 7px;
-  border-color: #FFD300;
+  border-color: #FAD474;
+  background-color: #000000;
+  color: #FAD474;
 }
 
 .avail-room-disp-filter {
@@ -280,44 +272,54 @@ height: 10vh;
 }
 
 .filter-wrapper {
-
+  width: 55vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .type-select-label {
-font-size: 2vh;
+font-size: 3vh;
+color: #FAD474;
+margin-right: 2vw;
 }
 
 .filter-select {
-font-size: 2vh;
-}
-
-option {
-
+font-family: 'Alegreya', serif;
+font-size: 4vh;
+background-color: #000000;
+color: #FAD474;
+margin-right: 3vw;
+border: solid #FAD474;
 }
 
 .filter-button{
-  font-size: 2vh;
+  font-family: 'Alegreya', serif;
+  font-size: 3vh;
   border-radius: 3px;
-  border-color: #FFD300;
-  background-color: #F4F4F4;
+  border-color: #FAD474;
+  background-color: #000000;
+  color: #FAD474;
 }
 
 .no-avail-for-type-alert {
   font-size: 2vh;
   color: red;
+  background-color: white;
   padding: 15px;
 }
 
 .avail-room-full-displays {
-  border: solid #FFD300;
+  border: solid #FAD474;
   border-radius: 7px;
-  background-color: #F4F4F4;
+  background-color: #000000;
   margin-top: 60px;
   margin-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80vw;
+  color: #FAD474;
 }
 
 .single-avail-room {
@@ -329,14 +331,14 @@ option {
 }
 
 .single-avail-room-title {
-  font-size: 1.75vh;
+  font-size: 3vh;
 }
 
 .single-avail-room-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 1.5vh;
+  font-size: 2vh;
 }
 
 .details {
@@ -344,10 +346,12 @@ option {
 }
 
 .book-room-button {
-  font-size: 2vh;
+  font-family: 'Alegreya', serif;
+  font-size: 3vh;
   border-radius: 3px;
-  border-color:#FFD300;
-  background-color: #D8D8D8;
+  border-color:#FAD474;
+  background-color: #000000;
+  color: #FAD474
 }
 
 /*~~~~~~Misc~~~~~~ */
