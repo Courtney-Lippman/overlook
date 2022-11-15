@@ -5,7 +5,6 @@
 #404040 - very dark grey
 */
 
-
 html, body {
   margin: none;
   height: 100%;
@@ -188,10 +187,6 @@ border-radius: 3px;
   color: #FAD474;
 }
 
-/* .date-select-avail-alert-wrapper {
-  font-size: 3vh;
-} */
-
 .date-select-alert {
   color: red;
   background-color: white;
@@ -368,10 +363,6 @@ border: solid #FAD474;
   font-size: 2vh;
 }
 
-.details {
-
-}
-
 .book-room-button {
   font-family: 'Alegreya', serif;
   font-size: 3vh;
@@ -386,6 +377,7 @@ border: solid #FAD474;
 }
 
 /*~~~~~~Attributions Page~~~~~~ */
+
 .attributions {
   color: #FAD474;
 }
