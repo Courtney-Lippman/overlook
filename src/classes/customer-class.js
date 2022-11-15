@@ -9,7 +9,6 @@ class Customer {
     };
 
     getBookings(SpecificBookingTypeListAllCustomers, bookingType) {
-        // console.log('hey', SpecificBookingTypeListAllCustomers)
     let customerListOfBookings = SpecificBookingTypeListAllCustomers.filter(booking => booking.userID === this.id);
     if(bookingType === 'past') {
             this.pastBookings = customerListOfBookings;

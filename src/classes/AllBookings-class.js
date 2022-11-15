@@ -1,4 +1,3 @@
-import AllRooms from "./allRooms-class";
 class AllBookings {
     constructor(allBookingsData) {
         this.allBookings = allBookingsData;
@@ -9,12 +8,12 @@ class AllBookings {
     
     getTodayDate() {
         let currentDate = new Date().toJSON().slice(0, 10)
-        return parseInt(currentDate.replaceAll('-', '')) // gives us 20221110 in num form
+        return parseInt(currentDate.replaceAll('-', ''))
     };
 
     sortBookings(date) {
         this.allBookings.forEach(booking => {
-            let bookingDate = parseInt(booking.date.replaceAll('/', '')) //give us 20230602 in num form
+            let bookingDate = parseInt(booking.date.replaceAll('/', ''))
             if(bookingDate < date) {
                 this.allPastBookings.push(booking);
             } else {

@@ -13,11 +13,9 @@ class Login {
        if(existingCustomer && this.password === 'overlook2021') {
         this.currentCustomer = new Customer(existingCustomer);
         this.loginStatus = 'accepted';
-       } else if (existingCustomer && this.password !== 'overlook2021') {
-        this.loginStatus = 'Wrong password';
-       } else if (existingCustomer === undefined) {
-        this.loginStatus = 'username nonexistant';
-       };
+       } else {
+        this.loginStatus = 'not accepted'
+       }
     };
 
 };
