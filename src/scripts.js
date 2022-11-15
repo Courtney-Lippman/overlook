@@ -278,4 +278,4 @@ function displayAtrri() {
     datePickerAlertWrapper.classList.add('hide');
     datePickerAvailAlertWrapper.classList.add('hide');
     attributions.classList.remove('hide')
-}
+};
