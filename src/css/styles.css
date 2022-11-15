@@ -16,7 +16,7 @@ html, body {
 .bg-container {
   margin: none;
   height: 100%;
-  background-color: black;
+  background-color: #000000;
   background-image: url(../images/login-photo.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,8 +84,9 @@ html, body {
 /* ~~~~~~Dashboard Page~~~~~~ */
 
 .dash-main {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-dash {
@@ -96,14 +97,14 @@ flex-direction: column;
 }
 
 .logo {
-  border: solid #FAD474;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 2vw;
   padding-right: 2vw;
   height: 13vh;
-  color: #FAD474;
+  color:#000000;
+  background-color: #FAD474;
 }
 
 .overlook-txt {
@@ -230,7 +231,7 @@ border-radius: 3px;
 
 .bookings-txt {
   font-size: 4vh;
-  color:black;
+  color: #000000;
 }
 
 .thumbnails-of-bookings {
@@ -240,6 +241,26 @@ border-radius: 3px;
   flex-wrap: wrap;
   justify-content: center;
   font-size: 3vh;
+}
+
+.attri-button {
+  width: 10vw;
+  margin-top: 40px;
+  background-color: #16100B;
+}
+
+.bottom-bee {
+  background-color: #16100B;
+  background-image: url(../images/login-photo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  width: 100vw;
+  display: flex; 
+  align-items: flex-start;
+  justify-content: center;
+  background-position-x: left;
+  background-position-y: 86%;
 }
 
 
@@ -309,10 +330,9 @@ margin-right: 2vw;
 .filter-select {
 font-family: 'Alegreya', serif;
 font-size: 4vh;
-background-color: #000000;
-color: #FAD474;
+background-color: #FAD474;
+color: #000000;
 margin-right: 3vw;
-border: solid #FAD474;
 }
 
 .filter-button{
@@ -332,16 +352,15 @@ border: solid #FAD474;
 }
 
 .avail-room-full-displays {
-  border: solid #FAD474;
   border-radius: 7px;
-  background-color: #000000;
+  background-color: #FAD474;
   margin-top: 60px;
   margin-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80vw;
-  color: #FAD474;
+  color: #000000;
 }
 
 .single-avail-room {
@@ -367,9 +386,9 @@ border: solid #FAD474;
   font-family: 'Alegreya', serif;
   font-size: 3vh;
   border-radius: 3px;
-  border-color:#FAD474;
-  background-color: #000000;
-  color: #FAD474
+  border-color:#000000;
+  background-color: #FAD474;
+  color: #000000;
 }
 
 .booked-message {

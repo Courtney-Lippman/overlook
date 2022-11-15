@@ -5,6 +5,7 @@ import AllRooms from './classes/allRooms-class';
 import AllBookings from './classes/AllBookings-class';
 import { fetchData, postData } from './apiCalls';
 import './images/flower.png';
+import './images/yellow-lily.png'
 
 // Global Variables ----------------------------------------------------------
 let customersData;
