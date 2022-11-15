@@ -38,12 +38,17 @@ const findRoomButton = document.querySelector('.search-avail-button-js');
 const totalSpentTxt = document.querySelector('.total-spent-txt');
 const thumbnailsUpcomingSection = document.querySelector('.thumbnails-of-upcoming-section-js');
 const thumbnailsPastSection = document.querySelector('.thumbnails-of-past-section-js');
+const attriButton = document.querySelector('.attri-button-js')
 // Availible Rooms Query Selectors -------------
 const thumbnailsAvailSection = document.querySelector('.avail-room-full-displays-js');
 const availibleRoomsPage = document.querySelector('.availible-main-js');
 const goBackButton = document.querySelector('.go-to-dash-button-js');
 const allRoomTypesFilterOptions = document.querySelector('.filter-select');
 const filterSearchButton = document.querySelector('.filter-button-js');
+
+//Attributions Page Query Selectors -----------
+const attributions = document.querySelector('.attributions-js')
+const attGoDashButton = document.querySelector('.go-to-dash-button-att-js')
 
 // Event Listeners -----------------------------------------------------------
 // Login Event Listeners -------------
@@ -52,9 +57,12 @@ signInButton.addEventListener('click', verifyCredentials);
 //Dashboard Event Listeners  --------------
 findRoomButton.addEventListener('click', displayAvailRooms);
 goBackButton.addEventListener('click', backToDash);
+attriButton.addEventListener('click', displayAtrri)
 //Availible Rooms Page Event Listeners ------------
 filterSearchButton.addEventListener('click', displayRoomsOfSameType);
 thumbnailsAvailSection.addEventListener('click', requestBooking);
+//Attributes Page Event Listeners ------------
+attGoDashButton.addEventListener('click', displayDashBoard)
 
 // Functions -----------------------------------------------------------------
 function pageLoad() {
@@ -104,6 +112,7 @@ function resetLogin() {
 function displayDashBoard() {
     loginMain.classList.add('hide');
     DashboardPage.classList.remove('hide');
+    attributions.classList.add('hide')
     welcomeTxt.innerText = `Welcome ${currentCustomer.customerName}!`;
 };
 
@@ -268,4 +277,9 @@ function backToDash (event) {
     datePickerAvailAlertWrapper.classList.add('hide');
 };
 
-
+function displayAtrri() {
+    DashboardPage.classList.add('hide');
+    datePickerAlertWrapper.classList.add('hide');
+    datePickerAvailAlertWrapper.classList.add('hide');
+    attributions.classList.remove('hide')
+}
