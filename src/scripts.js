@@ -183,7 +183,7 @@ function createAvailRoomThumbnailsDisplay(list) {
             };
             availRoomsSection += `
                 <section class="single-avail-room single-avail-room-js">
-                    <p class="single-avail-room-title">Room ${availRoom.number}</p>
+                    <h1 class="single-avail-room-title">Room ${availRoom.number}</h1>
                     <ul class="single-avail-room-list">
                         <li class="details room-type">Room Type: ${availRoom.roomType}</li>
                         <li class="details room-bidet">Bidet: ${bidet}</li>
