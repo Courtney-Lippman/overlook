@@ -22,7 +22,7 @@ let login;
 
 // DOM Query Selectors -------------------------------------------------------------
 // Login Query Selectors -------------
-const loginMain = document.querySelector('.login-main-js');
+const loginMain = document.querySelector('.login-container-js');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const signInButton = document.querySelector('.sign-in-button-js');
@@ -155,7 +155,8 @@ function displayAvailRooms(event) {
 event.preventDefault();
 selectedDate = datePickerInput.value;
 let userInput = parseInt(selectedDate.replaceAll('-', ''));
-if(userInput < todaysDate) {
+console.log('userInput',userInput)
+if(userInput < todaysDate || !userInput) {
     datePickerAlertWrapper.classList.remove('hide')
 } else {
  allBookings.sortAllAvailibleRooms(userInput, allRooms.allRooms)
