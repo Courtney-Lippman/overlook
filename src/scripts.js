@@ -4,9 +4,6 @@ import Login from './classes/login-class';
 import AllRooms from './classes/allRooms-class';
 import AllBookings from './classes/AllBookings-class';
 import { fetchData, postData } from './apiCalls';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png';
 import './images/flower.png';
 
 // Global Variables ----------------------------------------------------------
@@ -164,7 +161,6 @@ function displayAvailRooms(event) {
 event.preventDefault();
 selectedDate = datePickerInput.value;
 let userInput = parseInt(selectedDate.replaceAll('-', ''));
-console.log('userInput',userInput)
 if(userInput < todaysDate || !userInput) {
     datePickerAlertWrapper.classList.remove('hide')
 } else {
